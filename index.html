@@ -203,7 +203,7 @@
             background-color: #fff;
             border: 1px solid #ddd;
             border-radius: 12px;
-            width: 600px;
+            width: 100%;
             display: flex;
             padding: 20px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -217,8 +217,8 @@
         }
 
         .blog-card img {
-            width: 180px;
-            height: 120px;
+            width: 600px;
+            height: 300px;
             object-fit: cover;
             border-radius: 10px;
             margin-right: 20px;
@@ -283,6 +283,7 @@
             width: 300px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .testimonial p {
@@ -300,6 +301,11 @@
         .customer-location {
             color: #888;
             font-size: 0.9rem;
+        }
+
+        .testimonial:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
         /* Why Us Section */
@@ -327,6 +333,7 @@
             width: 250px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .benefit h3 {
@@ -338,6 +345,11 @@
         .benefit p {
             color: #555;
             font-size: 1rem;
+        }
+
+        .benefit:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
@@ -387,19 +399,19 @@
                 </div>
                 <div class="products-container">
                     <div class="product-card">
-                        <img src="https://via.placeholder.com/150" alt="Product 1">
+                        <img src="/assets/img/products/product1.jpeg" alt="Product 1">
                         <h3>Product Name 1</h3>
                         <p class="product-price">$199.99</p>
                         <a href="#" class="buy-now-btn">Buy Now</a>
                     </div>
                     <div class="product-card">
-                        <img src="https://via.placeholder.com/150" alt="Product 2">
+                        <img src="/assets/img/products/product2.jpeg" alt="Product 2">
                         <h3>Product Name 2</h3>
                         <p class="product-price">$149.99</p>
                         <a href="#" class="buy-now-btn">Buy Now</a>
                     </div>
                     <div class="product-card">
-                        <img src="https://via.placeholder.com/150" alt="Product 3">
+                        <img src="/assets/img/products/product3.jpeg" alt="Product 3">
                         <h3>Product Name 3</h3>
                         <p class="product-price">$120.99</p>
                         <a href="#" class="buy-now-btn">Buy Now</a>
@@ -414,7 +426,7 @@
                 <h2>Recent Blogs</h2>
                 <div class="blogs-container">
                     <div class="blog-card">
-                        <img src="https://via.placeholder.com/150" alt="Blog 1">
+                        <img src="/assets/img/blog/blogBanner/blogBanner1.jpeg" alt="Blog 1">
                         <div class="blog-text">
                             <h3>Blog Title 1</h3>
                             <p>Short description of the blog. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, qui?</p>
@@ -422,7 +434,7 @@
                         </div>
                     </div>
                     <div class="blog-card">
-                        <img src="https://via.placeholder.com/150" alt="Blog 2">
+                        <img src="/assets/img/blog/blogBanner/blogBanner2.jpeg" alt="Blog 2">
                         <div class="blog-text">
                             <h3>Blog Title 2</h3>
                             <p>Short description of the blog. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, qui?</p>
