@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Profile Container */
+        .profile-container {
+            padding: 40px 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .profile-header {
+            margin-bottom: 30px;
+        }
+
+        .profile-header h1 {
+            font-size: 2.5rem;
+            color: #333;
+        }
+
+        /* Profile Photo */
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 2px solid #ddd;
+            object-fit: cover;
+        }
+
+        /* Profile Info */
+        .profile-info {
+            text-align: left;
+            margin: 0 auto;
+            max-width: 400px;
+        }
+
+        .profile-info p {
+            margin: 10px 0;
+            font-size: 1.1rem;
+        }
+
+        
+
+        /* My Orders Section */
+        .my-orders {
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .my-orders h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+
+        }
+
+        .order-btn {
+            display: inline-block;
+            text-decoration: none;
+            background: #ff9800;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 1rem;
+            margin: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .order-btn:hover {
+            background: #e68a00;
+        }
+
+        /* Purchase History Section */
+        .purchase-history {
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .purchase-history h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .purchase-history table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .purchase-history th, .purchase-history td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .purchase-history th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="/assets/img/logo.jpg" alt="Company Logo">
+            <span>Watch Store</span>
+        </div>
+        <nav class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="blog.html">Blog</a>
+            <a href="research.html">Research</a>
+            <a href="about.html">About Us</a>
+        </nav>
+        <div class="header-tools">
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+            </div>
+            <div class="icons">
+                <a href="cart.html">
+                    <img src="/assets/img/icons/cart.jpeg" alt="Cart Icon" class="icon">
+                </a>
+                <a href="profile.html">
+                    <img src="/assets/img/icons/user.jpeg" alt="User Icon" class="icon">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="profile-container">
+            <div class="profile-header">
+                <h1>User Profile</h1>
+            </div>
+            <img src="/assets/img/profilePhoto/profilePhoto.jpeg" alt="Profile Photo" class="profile-photo"> 
+            <div class="profile-info">
+                <p><strong>Full Name:</strong> John Doe</p>
+                <p><strong>Email:</strong> johndoe@example.com</p>
+                <p><strong>Address:</strong> 123 Main St, Anytown, USA</p>
+                <p><strong>Phone:</strong> (123) 456-7890</p>
+            </div>
+
+            <!-- My Orders Section -->
+            <div class="my-orders">
+                <h2>My Orders</h2>
+                <a href="#" class="order-btn">To Pay</a>
+                <a href="#" class="order-btn">To Ship</a>
+                <a href="#" class="order-btn">To Receive</a>
+                <a href="#" class="order-btn">To Review</a>
+                <a href="#" class="order-btn">Returns & Cancellations</a>
+            </div>
+
+            <!-- Purchase History Section -->
+            <div class="purchase-history">
+                <h2>Purchase History</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th>Purchase Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Product 1</td>
+                            <td>$10.00</td>
+                            <td>2025-01-15</td>
+                            <td>Shipped</td>
+                        </tr>
+                        <tr>
+                            <td>Product 2</td>
+                            <td>$15.00</td>
+                            <td>2025-01-20</td>
+                            <td>Pending</td>
+                        </tr>
+                        <tr>
+                            <td>Product 3</td>
+                            <td>$20.00</td>
+                            <td>2025-01-25</td>
+                            <td>Delivered</td>
+                        </tr>
+                        <!-- Add more purchase records as needed -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h1>About Us</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+            </div>
+            <div class="footer-section links">
+                <h1>Quick Links</h1>
+                <ul>
+                    <a href="index.html"><li>Home</li></a>
+                    <a href="/pages/products.html"><li>Products</li></a>
+                    <a href="/pages/blog.html"><li>Blog</li></a>
+                    <a href="/pages/research.html"><li>Research</li></a>
+                    <a href="/pages/about.html"><li>About Us</li></a>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h1>Contact Us</h1>
+                <form>
+                    <input type="email" name="email" class="text-input contact-input" placeholder="Your email address...">
+                    <textarea rows="4" name="message" class="text-input contact-input" placeholder="Your message..."></textarea>
+                    <button type="submit" class="btn btn-big contact-btn">Send</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+             Copyright  &copy; 2025 Watch Store
+        </div>
+    </footer>
+</body>
+</html>
