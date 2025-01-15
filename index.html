@@ -14,7 +14,7 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: Georgia, 'Times New Roman', Times, serif;
             line-height: 1.6;
             color: #333;
         }
@@ -351,13 +351,181 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
+
+        /* responsive design */
+        @media (max-width: 1200px) {
+        .hero h1 {
+            font-size: 2.8rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+        }
+
+        .featured-products .section-header {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .products-container {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .product-card {
+            width: 90%;
+        }
+
+        .recent-blogs .blogs-container {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .blog-card {
+            width: 90%;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-container {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .testimonial {
+            width: 80%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .hero h1 {
+            font-size: 2.2rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+        }
+
+        .hero button {
+            padding: 10px 20px;
+            font-size: 1rem;
+        }
+
+        .section-header h2 {
+            font-size: 24px;
+        }
+
+        .product-card {
+            width: 100%;
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .blog-card {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .testimonial {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .hero h1 {
+            font-size: 1.8rem;
+        }
+
+        .hero p {
+            font-size: 1rem;
+        }
+
+        .hero button {
+            padding: 8px 16px;
+            font-size: 0.9rem;
+        }
+
+        .section-header h2 {
+            font-size: 20px;
+        }
+
+        .product-card {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .blog-card {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .testimonial {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+    }
+
+    @media (max-width: 1024px) {
+    .why-us-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .benefits {
+        grid-template-columns: 1fr 1fr 1fr; /* 3 columns for tablets */
+    }
+
+    .benefit {
+        width: 90%;
+    }
+}
+
+/* Small Screens (Mobile) */
+@media (max-width: 768px) {
+    .why-us-section h2 {
+        font-size: 1.6rem;
+    }
+
+    .benefits {
+        grid-template-columns: 1fr 1fr; /* 2 columns for smaller screens */
+    }
+
+    .benefit {
+        width: 90%; /* Adjust width to fit better */
+    }
+}
+
+/* Extra Small Screens (Mobile Portrait) */
+@media (max-width: 480px) {
+    .why-us-section {
+        padding: 20px;
+    }
+
+    .why-us-section h2 {
+        font-size: 1.4rem;
+    }
+
+    .benefits {
+        grid-template-columns: 1fr; /* Single column on very small screens */
+    }
+
+    .benefit {
+        width: 100%; /* Full width on very small screens */
+    }
+}
     </style>
 </head>
 
 <body>
     <header class="header">
         <div class="logo">
-            <img src="/assets/img/logo.jpg" alt="Company Logo">
+            <a href="index.html"><img src="/assets/img/logo.jpg" alt="Company Logo"></a>
             <span>Watch Store</span>
         </div>
         <nav class="nav-links">
@@ -385,8 +553,8 @@
     <main>
         <!-- Hero Section -->
         <section class="hero">
-            <h1>Welcome to Company Name</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+            <h1>Welcome to WatchHub</h1>
+            <p>Your one-stop shop for luxury watches</p>
             <button onclick="window.location.href='/pages/products.html';">Shop Now!</button>
         </section>
 
@@ -399,19 +567,20 @@
                 </div>
                 <div class="products-container">
                     <div class="product-card">
-                        <img src="/assets/img/products/product2.jpeg" alt="Product 1">
-                        <h3>Product Name 2</h3>
-                        <p class="product-price">$149.99</p>
+                        <img src="/assets/img/products/product1.jpg" alt="Product 1">
+                        <h3>Breguet Type XX</h3>
+                        <p class="product-price">$14,449</p>
                         <a href="#" class="buy-now-btn">Buy Now</a>
                     </div><div class="product-card">
-                        <img src="/assets/img/products/product2.jpeg" alt="Product 2">
-                        <h3>Product Name 2</h3>
-                        <p class="product-price">$149.99</p>
+                        <img src="/assets/img/products/product2.jpg" alt="Product 2">
+                        <h3>Rolex Datejust 41</h3>
+                        <p class="product-price">$13,500</p>
                         <a href="#" class="buy-now-btn">Buy Now</a>
-                    </div><div class="product-card">
-                        <img src="/assets/img/products/product2.jpeg" alt="Product 3">
-                        <h3>Product Name 2</h3>
-                        <p class="product-price">$149.99</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="/assets/img/products/product3.jpg" alt="Product 3">
+                        <h3>Omega Speedmaster</h3>
+                        <p class="product-price">$2,995</p>
                         <a href="#" class="buy-now-btn">Buy Now</a>
                     </div>
                 </div>

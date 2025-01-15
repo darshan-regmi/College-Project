@@ -76,13 +76,116 @@
             background: linear-gradient(45deg, #ff6b6b, #ff8c8c);
             transform: scale(1.05);
         }
+        /* Responsive Styles */
+
+/* Medium Screens (Tablets) */
+@media (max-width: 1024px) {
+
+/* Cart Container */
+.cart-container {
+    padding: 30px 15px;
+}
+
+/* Cart Header */
+.cart-header h1 {
+    font-size: 2rem;
+}
+
+/* Cart Table */
+table {
+    font-size: 14px;
+}
+
+th, td {
+    padding: 12px;
+}
+
+/* Cart Total */
+.cart-total {
+    font-size: 1.3rem;
+}
+
+/* Checkout Button */
+.checkout-btn {
+    font-size: 1.1rem;
+    padding: 10px 25px;
+}
+}
+
+/* Small Screens (Mobile) */
+@media (max-width: 768px) {
+
+/* Cart Container */
+.cart-container {
+    padding: 20px 10px;
+}
+
+/* Cart Header */
+.cart-header h1 {
+    font-size: 1.8rem;
+}
+
+/* Cart Table */
+table {
+    font-size: 13px;
+}
+
+th, td {
+    padding: 10px;
+}
+
+/* Cart Total */
+.cart-total {
+    font-size: 1.2rem;
+}
+
+/* Checkout Button */
+.checkout-btn {
+    font-size: 1rem;
+    padding: 8px 20px;
+}
+}
+
+/* Extra Small Screens (Mobile Portrait) */
+@media (max-width: 480px) {
+
+/* Cart Container */
+.cart-container {
+    padding: 15px 5px;
+}
+
+/* Cart Header */
+.cart-header h1 {
+    font-size: 1.6rem;
+}
+
+/* Cart Table */
+table {
+    font-size: 12px;
+}
+
+th, td {
+    padding: 8px;
+}
+
+/* Cart Total */
+.cart-total {
+    font-size: 1.1rem;
+}
+
+/* Checkout Button */
+.checkout-btn {
+    font-size: 0.9rem;
+    padding: 8px 18px;
+}
+}
     </style>
 </head>
 
 <body>
     <header class="header">
         <div class="logo">
-            <img src="/assets/img/logo.jpg" alt="Company Logo">
+            <a href="../index.html"><img src="/assets/img/logo.jpg" alt="Company Logo"></a>
             <span>Watch Store</span>
         </div>
         <nav class="nav-links">
@@ -134,7 +237,12 @@
                         <td><input type="number" value="1" min="1" class="quantity"></td>
                         <td class="total">$15.00</td>
                     </tr>
-                    <!-- Add more products as needed -->
+                    <tr>
+                        <td>Product 3</td>
+                        <td class="price">$25.00</td>
+                        <td><input type="number" value="1" min="1" class="quantity"></td>
+                        <td class="total">$25.00</td>
+                    </tr>
                 </tbody>
             </table>
             <div class="cart-total">
@@ -173,30 +281,5 @@
              Copyright  &copy; 2025 Watch Store
         </div>
     </footer>
-
-    <script>
-        const quantities = document.querySelectorAll('.quantity');
-        const prices = document.querySelectorAll('.price');
-        const totals = document.querySelectorAll('.total');
-        const grandTotalElement = document.getElementById('grand-total');
-
-        quantities.forEach((input, index) => {
-            input.addEventListener('input', () => {
-                const price = parseFloat(prices[index].textContent.replace('$', ''));
-                const quantity = parseInt(input.value);
-                const total = price * quantity;
-                totals[index].textContent = `$${total.toFixed(2)}`;
-                updateGrandTotal();
-            });
-        });
-
-        function updateGrandTotal() {
-            let grandTotal = 0;
-            totals.forEach(total => {
-                grandTotal += parseFloat(total.textContent.replace('$', ''));
-            });
-            grandTotalElement.textContent = `$${grandTotal.toFixed(2)}`;
-        }
-    </script>
 </body>
 </html>

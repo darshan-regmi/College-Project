@@ -210,42 +210,110 @@ header, footer {
 .footer-bottom a:hover {
     color: #fff;
 }
-
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-    .footer-content, .header {
+@media (max-width: 1024px) {
+    .header {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
     }
 
-    .footer-section, .header .nav-links {
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .header-tools {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search-bar input {
         width: 100%;
-        text-align: center;
-    }
-
-    .footer-section h1, .header .logo span {
-        font-size: 20px;
-    }
-
-    .footer-section p, .footer-section ul a, .header .nav-links a {
-        font-size: 14px;
-    }
-
-    .footer-bottom {
-        font-size: 12px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    header, footer {
-        padding: 20px 10px;
     }
 
     .footer-content {
-        padding: 0 10px;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .footer-section {
         width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Small Screens (Mobile) */
+@media (max-width: 768px) {
+    .header {
+        padding: 10px 15px;
+    }
+
+    .logo span {
+        font-size: 18px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+    }
+
+    .footer-section {
+        width: 100%;
+    }
+
+    .text-input {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .contact-btn {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+/* Extra Small Screens (Mobile Portrait) */
+@media (max-width: 480px) {
+    .header {
+        padding: 10px 10px;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    .nav-links {
+        gap: 8px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .footer-section {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .footer-bottom {
+        text-align: center;
+    }
+
+    .text-input {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .contact-btn {
+        padding: 10px;
+        font-size: 14px;
     }
 }

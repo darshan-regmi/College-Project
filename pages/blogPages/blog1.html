@@ -108,13 +108,159 @@
         .comment-form button:hover {
             background: #0056b3;
         }
+
+        /* Responsive Styles */
+
+/* Medium Screens (Tablets) */
+@media (max-width: 1024px) {
+
+/* Blog Container */
+.blog-container {
+    padding: 15px;
+}
+
+/* Blog Header */
+.blog-header h1 {
+    font-size: 2rem;
+}
+
+.blog-header .author-info {
+    font-size: 0.8rem;
+}
+
+/* Blog Content */
+.blog-content {
+    margin: 15px 0;
+    font-size: 1rem;
+}
+
+.blog-content img {
+    margin: 15px 0;
+}
+
+/* Comments Section */
+.comments-section h2 {
+    font-size: 1.6rem;
+}
+
+/* Comment Section */
+.comment p {
+    font-size: 0.9rem;
+}
+
+/* Comment Form */
+.comment-form input, .comment-form textarea {
+    padding: 8px;
+}
+
+.comment-form button {
+    padding: 8px 12px;
+    font-size: 1rem;
+}
+}
+
+/* Small Screens (Mobile) */
+@media (max-width: 768px) {
+
+/* Blog Container */
+.blog-container {
+    padding: 10px;
+}
+
+/* Blog Header */
+.blog-header h1 {
+    font-size: 1.8rem;
+}
+
+.blog-header .author-info {
+    font-size: 0.75rem;
+}
+
+/* Blog Content */
+.blog-content {
+    font-size: 0.95rem;
+    margin: 10px 0;
+}
+
+.blog-content img {
+    margin: 10px 0;
+}
+
+/* Comments Section */
+.comments-section h2 {
+    font-size: 1.5rem;
+}
+
+/* Comment Section */
+.comment p {
+    font-size: 0.85rem;
+}
+
+/* Comment Form */
+.comment-form input, .comment-form textarea {
+    padding: 8px;
+}
+
+.comment-form button {
+    padding: 8px 12px;
+    font-size: 0.95rem;
+}
+}
+
+/* Extra Small Screens (Mobile Portrait) */
+@media (max-width: 480px) {
+
+/* Blog Container */
+.blog-container {
+    padding: 10px;
+}
+
+/* Blog Header */
+.blog-header h1 {
+    font-size: 1.6rem;
+}
+
+.blog-header .author-info {
+    font-size: 0.7rem;
+}
+
+/* Blog Content */
+.blog-content {
+    font-size: 0.9rem;
+    margin: 5px 0;
+}
+
+.blog-content img {
+    margin: 5px 0;
+}
+
+/* Comments Section */
+.comments-section h2 {
+    font-size: 1.4rem;
+}
+
+/* Comment Section */
+.comment p {
+    font-size: 0.8rem;
+}
+
+/* Comment Form */
+.comment-form input, .comment-form textarea {
+    padding: 6px;
+}
+
+.comment-form button {
+    padding: 6px 10px;
+    font-size: 0.9rem;
+}
+}
     </style>
 </head>
 
 <body>
     <header class="header">
         <div class="logo">
-            <img src="/assets/img/logo.jpg" alt="Company Logo">
+            <a href="/index.html"><img src="/assets/img/logo.jpg" alt="Company Logo"></a>
             <span>Watch Store</span>
         </div>
         <nav class="nav-links">
@@ -150,7 +296,7 @@
             </div>
             <div class="blog-content">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <img src="/assets/img/blog-image.jpg" alt="Blog Image">
+                <img src="/assets/img/blog/blogImg/blog1.jpeg" alt="Blog Image" width="700">
                 <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                 <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
