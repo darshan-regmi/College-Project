@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Our Story and Team</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('../assets/img/banners/aboutUs.jpg') no-repeat center center/cover;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Our Story Section */
+        .our-story {
+            display: flex;
+            align-items: center;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .our-story img {
+            width: 50%;
+            border-radius: 8px;
+        }
+
+        .our-story-text {
+            padding: 20px;
+            flex: 1;
+        }
+
+        .our-story h2 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        /* Meet Our Team Section */
+        .team-section {
+            max-width: 900px;
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        .team-section h2 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .team-member {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #f9f9f9;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .team-member img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 20px;
+            border: 2px solid #007bff; /* Border for a modern touch */
+        }
+
+        .member-info {
+            flex: 1;
+        }
+
+        .member-info h3 {
+            margin-bottom: 5px;
+            font-size: 1.5rem;
+            color: #007bff;
+        }
+
+        .member-info p {
+            margin: 5px 0;
+        }
+
+        /* Call to Action Section */
+        .cta {
+            background: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin: 40px 0;
+            border-radius: 5px;
+        }
+
+        .cta h2 {
+            margin-bottom: 10px;
+        }
+
+        .cta a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .footer-content {
+            background: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer-section {
+            margin-bottom: 20px;
+        }
+
+        .footer-section h1 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            font-size: 0.9rem;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <!-- Logo and Navigation -->
+        <div class="logo">
+            <a href="../index.html"><img src="/assets/img/logo.jpg" alt="Company Logo"></a>
+            <span>Watch Store</span>
+        </div>
+        <nav class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="products.html" class="active">Products</a>
+            <a href="blog.html">Blog</a>
+            <a href="research.html">Research</a>
+            <a href="about.html">About Us</a>
+        </nav>
+        <div class="header-tools">
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+            </div>
+            <div class="icons">
+                <a href="/pages/cart.html">
+                    <img src="/assets/img/icons/cart.jpeg" alt="Cart Icon" class="icon">
+                </a>
+                <a href="/pages/profile.html">
+                    <img src="/assets/img/icons/user.jpeg" alt="User Icon" class="icon">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="hero">
+        <h1>Our Story</h1>
+        <p>Discover the journey of our e-commerce platform and the dedicated team behind it.</p>
+    </div>
+
+    <main>
+        <section class="our-story">
+            <img src="/assets/img/our-story-image.jpg" alt="Our Story Image">
+            <div class="our-story-text">
+                <h2>Our Journey</h2>
+                <p>Founded with a vision to revolutionize online shopping, our team is dedicated to providing a seamless and engaging e-commerce experience. We believe in innovation, collaboration, and excellence in every project we undertake.</p>
+            </div>
+        </section>
+
+        <section class="team-section">
+            <h2>Meet Our Team</h2>
+
+            <div class="team-member">
+                <img src="/assets/img/team-leader.jpg" alt="Team Leader">
+                <div class="member-info">
+                    <h3>Darshan Regmi</h3>
+                    <p><strong>Role:</strong> Team Leader</p>
+                    <p><strong>Short Bio:</strong> Darshan is a visionary leader with over years of experience in web developnment. He drives the team towards achieving innovative solutions and exceptional user experiences.</p>
+                </div>
+            </div>
+
+            <div class="team-member" style="flex-direction: row-reverse;">
+                <img src="/assets/img/team-member1.jpg" alt="John Smith">
+                <div class="member-info">
+                    <h3>Gaurav Poudel</h3>
+                    <p><strong>Role:</strong> Full Stack Developer</p>
+                    <p><strong>Short Bio:</strong> John specializes in building robust web applications, ensuring seamless functionality and user engagement.</p>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <img src="/assets/img/team-member2.jpg" alt="Sarah Lee">
+                <div class="member-info">
+                    <h3>Minam Singh Ale</h3>
+                    <p><strong>Role:</strong> UI/UX Designer</p>
+                    <p><strong>Short Bio:</strong> Sarah focuses on creating intuitive and visually appealing interfaces that enhance user experience.</p>
+                </div>
+            </div>
+
+            <div class="team-member" style="flex-direction: row-reverse;">
+                <img src="/assets/img/team-member3.jpg" alt="Michael Brown">
+                <div class="member-info">
+                    <h3>Prajwol Srestha</h3>
+                    <p><strong>Role:</strong> Research Specialist</p>
+                    <p><strong>Short Bio:</strong> Michael drives traffic and engagement through strategic marketing campaigns and SEO optimization.</p>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <img src="/assets/img/team-member4.jpg" alt="Emily Johnson">
+                <div class="member-info">
+                    <h3>Prajit Khatri</h3>
+                    <p><strong>Role:</strong> Project Manager</p>
+                    <p><strong>Short Bio:</strong> Emily ensures that projects are delivered on time and meet the highest quality standards through effective team collaboration.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="cta">
+            <h2>Connect with Us!</h2>
+            <p>Interested in learning more about our team or services? <a href="/pages/contact.html">Get in touch!</a></p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h1>About Us</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+            </div>
+            <div class="footer-section links">
+                <h1>Quick Links</h1>
+                <ul>
+                    <a href="index.html"><li>Home</li></a>
+                    <a href="/pages/products.html"><li>Products</li></a>
+                    <a href="/pages/blog.html"><li>Blog</li></a>
+                    <a href="/pages/research.html"><li>Research</li></a>
+                    <a href="/pages/about.html"><li>About Us</li></a>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h1>Contact Us</h1>
+                <form>
+                    <input type="email" name="email" class="text-input contact-input" placeholder="Your email address...">
+                    <textarea rows="4" name="message" class="text-input contact-input" placeholder="Your message..."></textarea>
+                    <button type="submit" class="btn btn-big contact-btn">Send</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            Copyright  &copy; 2025 Watch Store
+        </div>
+    </footer>
+</body>
+</html>
