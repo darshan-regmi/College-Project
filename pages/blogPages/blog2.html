@@ -3,23 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Title - Your Blog Name</title>
+    <title>WatcHUB</title>
     <link rel="stylesheet" href="/assets/css/styles.css">
     <style>
-        /* General Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
-        }
-
         /* Blog Container */
         .blog-container {
             max-width: 800px;
@@ -111,157 +97,153 @@
 
         /* Responsive Styles */
 
-/* Medium Screens (Tablets) */
-@media (max-width: 1024px) {
+        /* Medium Screens (Tablets) */
+        @media (max-width: 1024px) {
+            /* Blog Container */
+            .blog-container {
+                padding: 15px;
+            }
 
-/* Blog Container */
-.blog-container {
-    padding: 15px;
-}
+            /* Blog Header */
+            .blog-header h1 {
+                font-size: 2rem;
+            }
 
-/* Blog Header */
-.blog-header h1 {
-    font-size: 2rem;
-}
+            .blog-header .author-info {
+                font-size: 0.8rem;
+            }
 
-.blog-header .author-info {
-    font-size: 0.8rem;
-}
+            /* Blog Content */
+            .blog-content {
+                margin: 15px 0;
+                font-size: 1rem;
+            }
 
-/* Blog Content */
-.blog-content {
-    margin: 15px 0;
-    font-size: 1rem;
-}
+            .blog-content img {
+                margin: 15px 0;
+            }
 
-.blog-content img {
-    margin: 15px 0;
-}
+            /* Comments Section */
+            .comments-section h2 {
+                font-size: 1.6rem;
+            }
 
-/* Comments Section */
-.comments-section h2 {
-    font-size: 1.6rem;
-}
+            /* Comment Section */
+            .comment p {
+                font-size: 0.9rem;
+            }
 
-/* Comment Section */
-.comment p {
-    font-size: 0.9rem;
-}
+            /* Comment Form */
+            .comment-form input, .comment-form textarea {
+                padding: 8px;
+            }
 
-/* Comment Form */
-.comment-form input, .comment-form textarea {
-    padding: 8px;
-}
+            .comment-form button {
+                padding: 8px 12px;
+                font-size: 1rem;
+            }
+        }
 
-.comment-form button {
-    padding: 8px 12px;
-    font-size: 1rem;
-}
-}
+        /* Small Screens (Mobile) */
+        @media (max-width: 768px) {
+            /* Blog Container */
+            .blog-container {
+                padding: 10px;
+            }
 
-/* Small Screens (Mobile) */
-@media (max-width: 768px) {
+            /* Blog Header */
+            .blog-header h1 {
+                font-size: 1.8rem;
+            }
 
-/* Blog Container */
-.blog-container {
-    padding: 10px;
-}
+            .blog-header .author-info {
+                font-size: 0.75rem;
+            }
 
-/* Blog Header */
-.blog-header h1 {
-    font-size: 1.8rem;
-}
+            /* Blog Content */
+            .blog-content {
+                font-size: 0.95rem;
+                margin: 10px 0;
+            }
 
-.blog-header .author-info {
-    font-size: 0.75rem;
-}
+            .blog-content img {
+                margin: 10px 0;
+            }
 
-/* Blog Content */
-.blog-content {
-    font-size: 0.95rem;
-    margin: 10px 0;
-}
+            /* Comments Section */
+            .comments-section h2 {
+                font-size: 1.5rem;
+            }
 
-.blog-content img {
-    margin: 10px 0;
-}
+            /* Comment Section */
+            .comment p {
+                font-size: 0.85rem;
+            }
 
-/* Comments Section */
-.comments-section h2 {
-    font-size: 1.5rem;
-}
+            /* Comment Form */
+            .comment-form input, .comment-form textarea {
+                padding: 8px;
+            }
 
-/* Comment Section */
-.comment p {
-    font-size: 0.85rem;
-}
+            .comment-form button {
+                padding: 8px 12px;
+                font-size: 0.95rem;
+            }
+        }
 
-/* Comment Form */
-.comment-form input, .comment-form textarea {
-    padding: 8px;
-}
+        /* Extra Small Screens (Mobile Portrait) */
+        @media (max-width: 480px) {
+            /* Blog Container */
+            .blog-container {
+                padding: 10px;
+            }
 
-.comment-form button {
-    padding: 8px 12px;
-    font-size: 0.95rem;
-}
-}
+            /* Blog Header */
+            .blog-header h1 {
+                font-size: 1.6rem;
+            }
 
-/* Extra Small Screens (Mobile Portrait) */
-@media (max-width: 480px) {
+            .blog-header .author-info {
+                font-size: 0.7rem;
+            }
 
-/* Blog Container */
-.blog-container {
-    padding: 10px;
-}
+            /* Blog Content */
+            .blog-content {
+                font-size: 0.9rem;
+                margin: 5px 0;
+            }
 
-/* Blog Header */
-.blog-header h1 {
-    font-size: 1.6rem;
-}
+            .blog-content img {
+                margin: 5px 0;
+            }
 
-.blog-header .author-info {
-    font-size: 0.7rem;
-}
+            /* Comments Section */
+            .comments-section h2 {
+                font-size: 1.4rem;
+            }
 
-/* Blog Content */
-.blog-content {
-    font-size: 0.9rem;
-    margin: 5px 0;
-}
+            /* Comment Section */
+            .comment p {
+                font-size: 0.8rem;
+            }
 
-.blog-content img {
-    margin: 5px 0;
-}
+            /* Comment Form */
+            .comment-form input, .comment-form textarea {
+                padding: 6px;
+            }
 
-/* Comments Section */
-.comments-section h2 {
-    font-size: 1.4rem;
-}
-
-/* Comment Section */
-.comment p {
-    font-size: 0.8rem;
-}
-
-/* Comment Form */
-.comment-form input, .comment-form textarea {
-    padding: 6px;
-}
-
-.comment-form button {
-    padding: 6px 10px;
-    font-size: 0.9rem;
-}
-}
+            .comment-form button {
+                padding: 6px 10px;
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 
 <body>
     <header class="header">
         <div class="logo">
-            <a href="index.html"><img src="/assets/img/logo.jpg" alt="Company Logo"></a>
-            <span>Watch Store</span>
+            <a href="index.html"><img src="/assets/img/logo.png" alt="Company Logo"></a>
         </div>
         <nav class="nav-links">
             <a href="/index.html">Home</a>
@@ -276,10 +258,10 @@
             </div>
             <div class="icons">
                 <a href="../cart.html">
-                    <img src="/assets/img/icons/cart.jpg" alt="Cart Icon" class="icon">
+                    <img src="/assets/img/icons/cart.png" alt="Cart Icon" class="icon">
                 </a>
                 <a href="../profile.html">
-                    <img src="/assets/img/icons/user.jpg" alt="User Icon" class="icon">
+                    <img src="/assets/img/icons/user.png" alt="User Icon" class="icon">
                 </a>
             </div>
         </div>
@@ -301,7 +283,6 @@
                 <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
 
-            <!-- Comments Section -->
             <div class="comments-section">
                 <h2>Comments</h2>
                 <div class="comment">
@@ -312,10 +293,8 @@
                     <p class="comment-author">User 2</p>
                     <p>Another insightful comment!</p>
                 </div>
-                <!-- Add more comments as needed -->
             </div>
 
-            <!-- Comment Form -->
             <div class="comment-form">
                 <h2>Leave a Comment</h2>
                 <input type="text" placeholder="Your Name" required>
@@ -352,7 +331,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-             Copyright  &copy; 2025 Watch Store
+            Copyright  &copy; 2025 Watch Store
         </div>
     </footer>
 </body>

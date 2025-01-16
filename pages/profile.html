@@ -6,19 +6,6 @@
     <title>User Profile</title>
     <link rel="stylesheet" href="/assets/css/styles.css">
     <style>
-        /* General Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-
         /* Profile Container */
         .profile-container {
             padding: 40px 20px;
@@ -117,136 +104,113 @@
 
         /* Responsive Styles */
 
-        /* Medium Screens (Tablets) */
         @media (max-width: 1024px) {
 
-        /* Profile Container */
-        .profile-container {
-            padding: 30px 15px;
+            .profile-container {
+                padding: 30px 15px;
+            }
+
+            .profile-header h1 {
+                font-size: 2rem;
+            }
+
+            .profile-info p {
+                font-size: 1rem;
+            }
+
+            .my-orders h2 {
+                font-size: 1.6rem;
+            }
+
+            .purchase-history h2 {
+                font-size: 1.6rem;
+            }
+
+            .purchase-history th, .purchase-history td {
+                padding: 8px;
+                font-size: 14px;
+            }
+
+            .order-btn {
+                font-size: 0.9rem;
+                padding: 8px 12px;
+            }
         }
 
-        /* Profile Header */
-        .profile-header h1 {
-            font-size: 2rem;
-        }
-
-        /* Profile Info */
-        .profile-info p {
-            font-size: 1rem;
-        }
-
-        /* My Orders Section */
-        .my-orders h2 {
-            font-size: 1.6rem;
-        }
-
-        /* Purchase History Section */
-        .purchase-history h2 {
-            font-size: 1.6rem;
-        }
-
-        .purchase-history th, .purchase-history td {
-            padding: 8px;
-            font-size: 14px;
-        }
-
-        /* Order Button */
-        .order-btn {
-            font-size: 0.9rem;
-            padding: 8px 12px;
-        }
-        }
-
-        /* Small Screens (Mobile) */
         @media (max-width: 768px) {
 
-        /* Profile Container */
-        .profile-container {
-            padding: 20px 10px;
+            .profile-container {
+                padding: 20px 10px;
+            }
+
+            .profile-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .profile-photo {
+                width: 120px;
+                height: 120px;
+            }
+
+            .profile-info p {
+                font-size: 1rem;
+            }
+
+            .my-orders h2 {
+                font-size: 1.4rem;
+            }
+
+            .purchase-history h2 {
+                font-size: 1.4rem;
+            }
+
+            .purchase-history th, .purchase-history td {
+                padding: 6px;
+                font-size: 13px;
+            }
+
+            .order-btn {
+                font-size: 0.9rem;
+                padding: 8px 12px;
+            }
         }
 
-        /* Profile Header */
-        .profile-header h1 {
-            font-size: 1.8rem;
-        }
-
-        /* Profile Photo */
-        .profile-photo {
-            width: 120px;
-            height: 120px;
-        }
-
-        /* Profile Info */
-        .profile-info p {
-            font-size: 1rem;
-        }
-
-        /* My Orders Section */
-        .my-orders h2 {
-            font-size: 1.4rem;
-        }
-
-        /* Purchase History Section */
-        .purchase-history h2 {
-            font-size: 1.4rem;
-        }
-
-        .purchase-history th, .purchase-history td {
-            padding: 6px;
-            font-size: 13px;
-        }
-
-        /* Order Button */
-        .order-btn {
-            font-size: 0.9rem;
-            padding: 8px 12px;
-        }
-        }
-
-        /* Extra Small Screens (Mobile Portrait) */
         @media (max-width: 480px) {
 
-        /* Profile Container */
-        .profile-container {
-            padding: 15px 5px;
-        }
+            .profile-container {
+                padding: 15px 5px;
+            }
 
-        /* Profile Header */
-        .profile-header h1 {
-            font-size: 1.6rem;
-        }
+            .profile-header h1 {
+                font-size: 1.6rem;
+            }
 
-        /* Profile Photo */
-        .profile-photo {
-            width: 100px;
-            height: 100px;
-        }
+            .profile-photo {
+                width: 100px;
+                height: 100px;
+            }
 
-        /* Profile Info */
-        .profile-info p {
-            font-size: 0.9rem;
-        }
+            .profile-info p {
+                font-size: 0.9rem;
+            }
 
-        /* My Orders Section */
-        .my-orders h2 {
-            font-size: 1.3rem;
-        }
+            .my-orders h2 {
+                font-size: 1.3rem;
+            }
 
-        /* Purchase History Section */
-        .purchase-history h2 {
-            font-size: 1.3rem;
-        }
+            .purchase-history h2 {
+                font-size: 1.3rem;
+            }
 
-        .purchase-history th, .purchase-history td {
-            padding: 5px;
-            font-size: 12px;
-        }
+            .purchase-history th, .purchase-history td {
+                padding: 5px;
+                font-size: 12px;
+            }
 
-        /* Order Button */
-        .order-btn {
-            font-size: 0.8rem;
-            padding: 6px 10px;
-        }
+            .order-btn {
+                font-size: 0.8rem;
+                padding: 6px 10px;
+            }
         }
     </style>
 </head>
@@ -254,8 +218,7 @@
 <body>
     <header class="header">
         <div class="logo">
-            <a href="../index.html"><img src="/assets/img/logo.jpg" alt="Company Logo"></a>
-            <span>Watch Store</span>
+            <a href="../index.html"><img src="/assets/img/logo.png" alt="Company Logo"></a>
         </div>
         <nav class="nav-links">
             <a href="../index.html">Home</a>
@@ -270,10 +233,10 @@
             </div>
             <div class="icons">
                 <a href="cart.html">
-                    <img src="/assets/img/icons/cart.jpg" alt="Cart Icon" class="icon">
+                    <img src="/assets/img/icons/cart.png" alt="Cart Icon" class="icon">
                 </a>
                 <a href="profile.html">
-                    <img src="/assets/img/icons/user.jpg" alt="User Icon" class="icon">
+                    <img src="/assets/img/icons/user.png" alt="User Icon" class="icon">
                 </a>
             </div>
         </div>
@@ -316,24 +279,23 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Product 1</td>
-                            <td>$10.00</td>
+                            <td>Rolex GTM</td>
+                            <td>$10,000.00</td>
                             <td>2025-01-15</td>
                             <td>Shipped</td>
                         </tr>
                         <tr>
-                            <td>Product 2</td>
-                            <td>$15.00</td>
-                            <td>2025-01-20</td>
-                            <td>Pending</td>
-                        </tr>
-                        <tr>
-                            <td>Product 3</td>
-                            <td>$20.00</td>
-                            <td>2025-01-25</td>
+                            <td>Casio M4T</td>
+                            <td>$1,500.00</td>
+                            <td>2024-11-20</td>
                             <td>Delivered</td>
                         </tr>
-                        <!-- Add more purchase records as needed -->
+                        <tr>
+                            <td>Rado 2FT</td>
+                            <td>$20,000.00</td>
+                            <td>2025-01-17</td>
+                            <td>Pending</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

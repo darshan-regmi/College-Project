@@ -1,8 +1,14 @@
-/* General Styles for Header and Footer */
-body {
+/* General Reset */
+* {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 1.6;
+    color: #333;
 }
 
 /* Header and Footer Common Styles */
@@ -22,6 +28,8 @@ header, footer {
     padding: 10px 20px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to right, #ffffff, #dfdddd, #edeaea, #dfdddd, #ffffff);
+    background: linear-gradient(to bottom, #dcdcdc, #ffffff);
 }
 
 .logo {
@@ -30,16 +38,16 @@ header, footer {
 }
 
 .logo img {
-    width: 50px;
+    width: 150px;
     height: 50px;
     margin-right: 10px;
+    transition: transform 0.3s ease;
 }
 
-.logo span {
-    font-size: 20px;
-    font-weight: bold;
-    color: #333;
+.logo img:hover {
+    transform: scale(1.09);
 }
+
 
 .nav-links {
     display: flex;
@@ -48,15 +56,17 @@ header, footer {
 
 .nav-links a {
     text-decoration: none;
-    color: #333;
+    color: #605656;
     font-size: 16px;
     font-weight: 500;
     transition: color 0.3s, border-bottom 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .nav-links a:hover {
     color: #007bff;
-    border-bottom: 2px solid #007bff;
+    border-bottom: 2px solid #559bd3;
+    transform: scale(1.09);
 }
 
 /* Highlight the active page */
@@ -104,7 +114,7 @@ header, footer {
 }
 
 .icon:hover {
-    transform: scale(1.1);
+    transform: scale(1.09);
 }
 
 /* Footer Content */
@@ -148,10 +158,12 @@ header, footer {
     margin-bottom: 10px;
     display: block;
     transition: color 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .footer-section ul a:hover {
-    color: #ff6b6b;
+    color: #544f4f;
+    transform: scale(1.05);
 }
 
 /* Contact Form */
@@ -171,10 +183,15 @@ header, footer {
 
 .contact-input {
     resize: vertical;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.contact-input:hover{
+    transform: scale(1.05);
 }
 
 .contact-btn {
-    background-color: #ff6b6b;
+    background: linear-gradient(45deg, #00ADB5, #00838a);
     color: #fff;
     padding: 12px;
     font-size: 16px;
@@ -185,10 +202,12 @@ header, footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .contact-btn:hover {
-    background-color: #ff4c4c;
+    background: linear-gradient(45deg, #00838a, #036065);
+            transform: scale(1.05);
 }
 
 .contact-btn i {
