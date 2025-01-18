@@ -9,9 +9,10 @@
         /* Profile Container */
         .profile-container {
             padding: 40px 20px;
-            max-width: 600px;
+            max-width: auto;
             margin: 0 auto;
             text-align: center;
+            background: linear-gradient(to bottom, #dcdcdc, #ffffff);
         }
 
         .profile-header {
@@ -20,7 +21,8 @@
 
         .profile-header h1 {
             font-size: 2.5rem;
-            color: #333;
+            color: #000000;
+            text-align: center;
         }
 
         /* Profile Photo */
@@ -50,7 +52,7 @@
         /* My Orders Section */
         .my-orders {
             margin-top: 40px;
-            text-align: left;
+            text-align: center;
         }
 
         .my-orders h2 {
@@ -62,23 +64,24 @@
         .order-btn {
             display: inline-block;
             text-decoration: none;
-            background: #ff9800;
+            background: linear-gradient(45deg, #00ADB5, #00838a);
             color: #fff;
             padding: 10px 15px;
             border-radius: 5px;
             font-size: 1rem;
             margin: 5px;
-            transition: background 0.3s ease;
+            transition: background 0.3s ease, transform 0.3s ease;
         }
 
         .order-btn:hover {
-            background: #e68a00;
+            background: linear-gradient(45deg, #00838a, #036065);
+            transform: scale(1.05);
         }
 
         /* Purchase History Section */
         .purchase-history {
             margin-top: 40px;
-            text-align: left;
+            text-align: center;
         }
 
         .purchase-history h2 {
@@ -87,9 +90,11 @@
         }
 
         .purchase-history table {
-            width: 100%;
+            width: 90%;
             border-collapse: collapse;
             margin-bottom: 20px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .purchase-history th, .purchase-history td {
@@ -302,7 +307,7 @@
         </div>
     </main>
 
-    <footer>
+    <footer class="footer">
         <div class="footer-content">
             <div class="footer-section about">
                 <h1>About Us</h1>

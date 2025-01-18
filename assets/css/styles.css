@@ -57,23 +57,23 @@ header, footer {
 .nav-links a {
     text-decoration: none;
     color: #605656;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 500;
     transition: color 0.3s, border-bottom 0.3s ease;
     transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #007bff;
-    border-bottom: 2px solid #559bd3;
+    color: #00ADB5;
+    border-bottom: 2px solid #1c7478;
     transform: scale(1.09);
 }
 
 /* Highlight the active page */
 .nav-links a.active {
-    color: #007bff;
+    color: #009199;
     font-weight: bold;
-    border-bottom: 2px solid #007bff;
+    border-bottom: 2px solid #077176;
 }
 
 .header-tools {
@@ -97,7 +97,7 @@ header, footer {
 
 .search-bar input:focus {
     width: 200px;
-    border-color: #007bff;
+    border-color: #066f74;
     outline: none;
 }
 
@@ -118,6 +118,10 @@ header, footer {
 }
 
 /* Footer Content */
+.footer {
+    background: linear-gradient(to left, #ffffff, #dfdddd, #edeaea, #dfdddd, #ffffff);
+    background: linear-gradient(to top, #dcdcdc, #ffffff);
+}
 .footer-content {
     display: flex;
     justify-content: space-between;
@@ -221,14 +225,6 @@ header, footer {
     margin-top: 30px;
 }
 
-.footer-bottom a {
-    color: #ff6b6b;
-    text-decoration: none;
-}
-
-.footer-bottom a:hover {
-    color: #fff;
-}
 @media (max-width: 1024px) {
     .header {
         flex-direction: column;

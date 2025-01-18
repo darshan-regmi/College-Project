@@ -79,17 +79,19 @@
         .button {
             padding: 12px 25px;
             font-size: 16px;
-            background-color: #4CAF50;
+            background: linear-gradient(45deg, #00ADB5, #00838a);
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             margin: 10px;
             text-decoration: none;
+            transition: background 0.3s ease, transform 0.3s ease;
         }
 
         .button:hover {
-            background-color: #45a049;
+            background: linear-gradient(45deg, #00838a, #036065);
+            transform: scale(1.05);
         }
 
         .related-products {
@@ -116,6 +118,12 @@
         .related-products img {
             max-width: 200px;
             border-radius: 5px;
+            transition: background 0.3s ease, transform 0.3s ease;
+
+        }
+
+        .related-products img:hover {
+            transform: scale(1.05);
         }
 
         .reviews {
@@ -143,7 +151,7 @@
         </div>
         <nav class="nav-links">
             <a href="/index.html">Home</a>
-            <a href="../products.html" class="active">Products</a>
+            <a href="../products.html">Products</a>
             <a href="../blog.html">Blog</a>
             <a href="../research.html">Research</a>
             <a href="../about.html">About Us</a>
@@ -237,7 +245,7 @@
         </div>
     </div>
 
-    <footer>
+    <footer class="footer">
         <div class="footer-content">
             <div class="footer-section about">
                 <h1>About Us</h1>
