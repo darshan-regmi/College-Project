@@ -60,36 +60,40 @@
             list-style: none;
             padding: 10px 0;
             min-width: 200px;
-            z-index: 1000;
+            z-index: 100;
             opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.5s ease, visibility 0s 0.3s;
+            visibility: hidden;;
         }
 
         .dropdown-menu li {
-            padding: 8px 20px;
+            padding: 8px 8px;
+            margin-right: 10%;
+            text-align: center;
+            justify-content: center;
         }
 
         .dropdown-menu li a {
             color: #333;
             font-weight: normal;
+            text-align: center;
         }
 
         .dropdown-menu li a:hover {
             color: #ffffff;
             background: linear-gradient(45deg, #00838a, #036065);
         }
+        
 
         /* Submenu (Second Level) */
         .dropdown-menu .dropdown:hover .dropdown-menu {
-            display: block;
+            display: contents;
             left: 100%;
             top: 0;
+            right: 0%;
         }
 
         /* Product Section Styling */
         .products {
-            background: linear-gradient(to bottom, #f9f9f9, #e9e9e9);
             padding: 40px 20px;
             text-align: center;
         }
@@ -109,6 +113,7 @@
             border: 1px solid #ddd;
             border-radius: 12px;
             width: calc(20% - 50px);
+            height: 40vh;
             text-align: center;
             padding: 20px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -161,6 +166,19 @@
         .buy-now-btn:hover {
             background: linear-gradient(45deg, #00838a, #036065);
             transform: translateY(-3px);
+        }
+
+        .sorting-dropdown {
+            margin: 10px;
+            text-align: right;
+            background:#ffffff;
+        }
+
+        .sorting-dropdown select {
+            padding: 8px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
         }
 
         /*Responsive Styles*/
@@ -287,10 +305,11 @@
     <!-- Category Selector -->
     <nav class="category-selector">
         <ul>
+            <li><a href="#all">All Categories</a></li>
             <li class="dropdown">
                 <a href="#mens-watches">Men's Watches</a>
                 <ul class="dropdown-menu">
-                    <li><a href="#analog-mens">Analog Watches</a></li>
+                    <li><a href="#analog-mens" >Analog Watches</a></li>
                     <li><a href="#digital-mens">Digital Watches</a></li>
                     <li><a href="#smart-mens">Smart Watches</a></li>
                     <li><a href="#fitness-mens">Fitness Watches</a></li>
@@ -331,192 +350,216 @@
         </ul>
     </nav>
 
+    <!-- Sorting Dropdown -->
+    <div class="sorting-dropdown">
+        <label for="sort-by">Sort by:</label>
+        <select id="sort-by" onchange="sortProducts()">
+            <option value="default">Default</option>
+            <option value="price-low-high">Price: Low to High</option>
+            <option value="price-high-low">Price: High to Low</option>
+            <option value="name-a-z">Name: A to Z</option>
+            <option value="name-z-a">Name: Z to A</option>
+        </select>
+    </div>
+
     <!-- Main Content -->
     <main>
         <section class="products">
             <div class="container">
                 <div class="products-container">
-                    <div class="product-card">
+                    <div class="product-card" data-category="analog-womens">
                         <img src="../assets/img/products/product1.jpg" alt="Titan Quartz Analog Rose Gold Dial Watch for Women">
                         <h3 style="font-size: small;">Titan Quartz Analog Rose Gold Dial Watch for Women</h3>
                         <p class="product-price">NPR 7,990.00</p>
-                        <a href="productPages/productPage1.html" class="buy-now-btn">Buy Now</a>
+                        <a href="productPages/productPage1.html" class="buy-now-btn">Read More</a>
                     </div>
-                    <div class="product-card">
+                    
+                    <div class="product-card" data-category="analog-mens">
                         <img src="../assets/img/products/product2.jpg" alt="Ultima Watch Circle">
                         <h3>Ultima Watch Circle</h3>
                         <p class="product-price">NPR 3,899.00</p>
-                        <a href="productPages/productPage2.html" class="buy-now-btn">Buy Now</a>
+                        <a href="productPages/productPage2.html" class="buy-now-btn">Read More</a>
                     </div>
-                    <div class="product-card">
+                    
+                    <div class="product-card" data-category="luxury-mens">
                         <img src="../assets/img/products/product3.jpg" alt="Brihaspari Black">
                         <h3>Brihaspari Black</h3>
                         <p class="product-price">NPR 23,999.00</p>
-                        <a href="productPages/productPage3.html" class="buy-now-btn">Buy Now</a>
+                        <a href="productPages/productPage3.html" class="buy-now-btn">Read More</a>
                     </div>
-                    <div class="product-card">
+                    
+                    <div class="product-card" data-category="luxury-mens">
                         <img src="../assets/img/products/product4.jpg" alt="Rolex Datejust 41">
                         <h3>Rolex Datejust 41</h3>
                         <p class="product-price" style="font-size:15px">NPR 500,000.00</p>
-                        <a href="productPages/productPage4.html" class="buy-now-btn">Buy Now</a>
+                        <a href="productPages/productPage4.html" class="buy-now-btn">Read More</a>
                     </div>
-                    <div class="product-card">
+                    
+                    <div class="product-card" data-category="luxury-womens">
                         <img src="../assets/img/products/product5.jpg" alt="Breguet Type XX">
                         <h3>Breguet Type XX</h3>
                         <p class="product-price">$14,449.00</p>
-                        <a href="productPages/productPage5.html" class="buy-now-btn">Buy Now</a>
+                        <a href="productPages/productPage5.html" class="buy-now-btn">Read More</a>
                     </div>
-                    <div class="product-card">
+                    
+                    <div class="product-card" data-category="digital-mens">
                         <img src="../assets/img/products/product6.jpg" alt="Casio G-Shock Mudmaster">
                         <h3>Casio G-Shock Mudmaster</h3>
                         <p class="product-price">NPR 19,999.00</p>
-                        <a href="productPages/productPage6.html" class="buy-now-btn">Buy Now</a>
+                        <a href="productPages/productPage6.html" class="buy-now-btn">Read More</a>
                     </div>
-                    <div class="product-card">
+                    
+                    <div class="product-card" data-category="smart-womens">
                         <img src="../assets/img/products/product7.jpg" alt="Apple Watch Series 9">
                         <h3>Apple Watch Series 9</h3>
                         <p class="product-price">NPR 79,999.00</p>
-                        <a href="#" class="buy-now-btn">Buy Now</a>
+                        <a href="#" class="buy-now-btn">Read More</a>
                     </div>
-                    <div class="product-card">
+                    
+                    <div class="product-card" data-category="analog-mens">
                         <img src="../assets/img/products/product8.jpg" alt="Seiko 5 Sports">
                         <h3 style="font-size: 21px;">Seiko 5 Sports</h3>
                         <p class="product-price">NPR 15,499.00</p>
-                        <a href="#" class="buy-now-btn">Buy Now</a>
+                        <a href="#" class="buy-now-btn">Read More</a>
                     </div>
-                    <div class="product-card">
+                    
+                    <div class="product-card" data-category="luxury-mens">
                         <img src="../assets/img/products/product9.jpg" alt="Omega Speedmaster Professional">
                         <h3 style="font-size: 14.08px;">Omega Speedmaster Professional</h3>
                         <p class="product-price">$10,000.00</p>
-                        <a href="#" class="buy-now-btn">Buy Now</a>
+                        <a href="#" class="buy-now-btn">Read More</a>
                     </div>
-                    <div class="product-card">
+                    
+                    <div class="product-card" data-category="smart-mens">
                         <img src="../assets/img/products/product10.jpg" alt="Fossil Gen 6 Smartwatch">
                         <h3>Fossil Gen 6 Smartwatch</h3>
                         <p class="product-price">NPR 25,999.00</p>
-                        <a href="#" class="buy-now-btn">Buy Now</a>
+                        <a href="#" class="buy-now-btn">Read More</a>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-category="luxury-womens">
                         <img src="../assets/img/products/product11.jpg" alt="Tag Heuer Carrera">
                         <h3>Tag Heuer Carrera</h3>
                         <p class="product-price">$16,000.00</p>
-                        <a href="#" class="buy-now-btn">Buy Now</a>
+                        <a href="#" class="buy-now-btn">Read More</a>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-category="analog-mens">
                         <img src="../assets/img/products/product12.jpg" alt="Citizen Eco-Drive Promaster">
                         <h3 style="font-size: 17.207px;">Citizen Eco-Drive Promaster</h3>
                         <p class="product-price">NPR 18,499.00</p>
-                        <a href="#" class="buy-now-btn">Buy Now</a>
+                        <a href="#" class="buy-now-btn">Read More</a>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-category="smart-womens">
                         <img src="../assets/img/products/product13.jpg" alt="Samsung Galaxy Watch 6">
                         <h3>Samsung Galaxy Watch 6</h3>
                         <p class="product-price">NPR 42,999.00</p>
-                        <a href="#" class="buy-now-btn">Buy Now</a>
+                        <a href="#" class="buy-now-btn">Read More</a>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-category="analog-mens">
                         <img src="../assets/img/products/product14.jpg" alt="Hamilton Khaki Field Mechanical">
                         <h3>Hamilton Khaki Field Mechanical</h3>
                         <p class="product-price">NPR 29,999.00</p>
-                        <a href="#" class="buy-now-btn">Buy Now</a>
+                        <a href="#" class="buy-now-btn">Read More</a>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-category="luxury-mens">
                         <img src="../assets/img/products/product15.jpg" alt="Longines Master Collection">
                         <h3>Longines Master Collection</h3>
                         <p class="product-price">$11,500.00</p>
-                        <a href="#" class="buy-now-btn">Buy Now</a>
+                        <a href="#" class="buy-now-btn">Read More</a>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-category="analog-mens">
                         <img src="../assets/img/products/product16.jpg" alt="Tissot Le Locle Automatic">
                         <h3 style="font-size: 20.4px;">Tissot Le Locle Automatic</h3>
                         <p class="product-price">NPR 32,990.00</p>
-                        <a href="#" class="buy-now-btn">Buy Now</a>
+                        <a href="#" class="buy-now-btn">Read More</a>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-category="luxury-womens">
                         <img src="../assets/img/products/product17.jpg" alt="Hublot Classic Fusion">
                         <h3 style="font-size: 20.7px;">Hublot Classic Fusion</h3>
                         <p class="product-price">$17,800.00</p>
-                        <a href="#" class="buy-now-btn">Buy Now</a>
+                        <a href="#" class="buy-now-btn">Read More</a>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-category="analog-mens">
                         <img src="../assets/img/products/product18.jpg" alt="Audemars Piguet Royal Oak">
                         <h3>Audemars Piguet Royal Oak</h3>
                         <p class="product-price">$25,000.00</p>
-                        <a href="#" class="buy-now-btn">Buy Now</a>
+                        <a href="#" class="buy-now-btn">Read More</a>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-category="luxury-mens">
                         <img src="../assets/img/products/product19.jpg" alt="Cartier Ballon Bleu">
                         <h3 style="font-size: 20.7px;">Cartier Ballon Bleu</h3>
                         <p class="product-price">$15,999.00</p>
-                        <a href="#" class="buy-now-btn">Buy Now</a>
+                        <a href="#" class="buy-now-btn">Read More</a>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-category="luxury-womens">
                         <img src="../assets/img/products/product20.jpg" alt="Patek Philippe Nautilus">
                         <h3 style="font-size: 19.5px;">Patek Philippe Nautilus</h3>
                         <p class="product-price">$35,999.00</p>
-                        <a href="#" class="buy-now-btn">Buy Now</a>
+                        <a href="#" class="buy-now-btn">Read More</a>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-category="analog-mens">
                         <img src="../assets/img/products/product21.jpg" alt="Bulova Precisionist">
                         <h3>Bulova Precisionist</h3>
                         <p class="product-price">NPR 15,499.00</p>
-                        <a href="#" class="buy-now-btn">Buy Now</a>
+                        <a href="#" class="buy-now-btn">Read More</a>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-category="luxury-mens">
                         <img src="../assets/img/products/product22.jpg" alt="Frederique Constant Slimline">
                         <h3 style="font-size: 100.20%;">Frederique Constant Slimline</h3>
                         <p class="product-price">NPR 28,999.00</p>
-                        <a href="#" class="buy-now-btn">Buy Now</a>
+                        <a href="#" class="buy-now-btn">Read More</a>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-category="analog-mens">
                         <img src="../assets/img/products/product23.jpg" alt="Timex Expedition Field Chronograph">
                         <h3 style="font-size: 12.4px;">Timex Expedition Field Chronograph</h3>
                         <p class="product-price">NPR 6,499.00</p>
-                        <a href="#" class="buy-now-btn">Buy Now</a>
+                        <a href="#" class="buy-now-btn">Read More</a>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-category="luxury-womens">
                         <img src="../assets/img/products/product24.jpg" alt="Michael Kors Lexington">
                         <h3>Michael Kors Lexington</h3>
                         <p class="product-price">NPR 18,999.00</p>
-                        <a href="#" class="buy-now-btn">Buy Now</a>
+                        <a href="#" class="buy-now-btn">Read More</a>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-category="luxury-mens">
                         <img src="../assets/img/products/product25.jpg" alt="Grand Seiko Spring Drive">
                         <h3>Grand Seiko Spring Drive</h3>
                         <p class="product-price">$22,500.00</p>
-                        <a href="#" class="buy-now-btn">Buy Now</a>
+                        <a href="#" class="buy-now-btn">Read More</a>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-category="analog-mens">
                         <img src="../assets/img/products/product26.jpg" alt="Movado Museum Classic">
                         <h3 style="font-size: 15.4px;">Movado Museum Classic</h3>
                         <p class="product-price">NPR 24,499.00</p>
-                        <a href="#" class="buy-now-btn">Buy Now</a>
+                        <a href="#" class="buy-now-btn">Read More</a>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-category="luxury-womens">
                         <img src="../assets/img/products/product27.jpg" alt="Rado True Square">
                         <h3>Rado True Square</h3>
                         <p class="product-price">$9,300.00</p>
-                        <a href="#" class="buy-now-btn">Buy Now</a>
+                        <a href="#" class="buy-now-btn">Read More</a>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-category="analog-mens">
                         <img src="../assets/img/products/product28.jpg" alt="Orient Bambino Version 5">
                         <h3 style="font-size: 15.4px;">Orient Bambino Version 5</h3>
                         <p class="product-price">NPR 13,499.00</p>
-                        <a href="#" class="buy-now-btn">Buy Now</a>
+                        <a href="#" class="buy-now-btn">Read More</a>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-category="luxury-mens">
                         <img src="../assets/img/products/product29.jpg" alt="Diesel Mega Chief Chronograph">
                         <h3 style="font-size: 15.4px;">Diesel Mega Chief Chronograph</h3>
                         <p class="product-price">NPR 19,999.00</p>
-                        <a href="#" class="buy-now-btn">Buy Now</a>
+                        <a href="#" class="buy-now-btn">Read More</a>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-category="analog-mens">
                         <img src="../assets/img/products/product30.jpg" alt="Tommy Hilfiger Classic Blue">
                         <h3 style="font-size: 15.4px;">Tommy Hilfiger Classic Blue</h3>
                         <p class="product-price">NPR 14,999.00</p>
-                        <a href="#" class="buy-now-btn">Buy Now</a>
+                        <a href="#" class="buy-now-btn">Read More</a>
                     </div>
                 </div>
+                <p id="no-products-message" style="display: none; text-align: center; font-size: 18px; color: gray;">
+                    No products found for this category.
+                </p>
             </div>
         </section>
     </main>
@@ -551,5 +594,83 @@
             Copyright  &copy; 2025 Watch Store
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const productsContainer = document.querySelector('.products-container');
+            const categories = document.querySelectorAll('.dropdown');
+            const categoryList = document.getElementById('category-list');
+            const noProductsMessage = document.getElementById('no-products-message');
+
+            // Sort Products
+            function sortProducts() {
+                const sortBy = document.getElementById('sort-by').value;
+                const productCards = Array.from(productsContainer.getElementsByClassName('product-card'));
+
+                const sortedProducts = productCards.sort((a, b) => {
+                    const getPrice = el => parseFloat(el.querySelector('.product-price').textContent.replace(/[^0-9.-]+/g, ""));
+                    const getName = el => el.querySelector('h3').textContent.toLowerCase();
+
+                    if (sortBy === 'price-low-high') return getPrice(a) - getPrice(b);
+                    if (sortBy === 'price-high-low') return getPrice(b) - getPrice(a);
+                    if (sortBy === 'name-a-z') return getName(a).localeCompare(getName(b));
+                    if (sortBy === 'name-z-a') return getName(b).localeCompare(getName(a));
+                    return 0;
+                });
+
+                // Reorder products in the DOM
+                productsContainer.innerHTML = '';
+                const fragment = document.createDocumentFragment();
+                sortedProducts.forEach(product => fragment.appendChild(product));
+                productsContainer.appendChild(fragment);
+            }
+
+            // Sort Categories and Subcategories
+            function sortCategories() {
+                // Sort main categories
+                const sortedCategories = Array.from(categories).sort((a, b) => {
+                    return a.querySelector('a').textContent.localeCompare(b.querySelector('a').textContent);
+                });
+                sortedCategories.forEach(category => categoryList.appendChild(category));
+
+                // Sort subcategories within each dropdown
+                document.querySelectorAll('.dropdown-menu').forEach(submenu => {
+                    const sortedSubItems = Array.from(submenu.children).sort((a, b) => {
+                        return a.textContent.localeCompare(b.textContent);
+                    });
+                    sortedSubItems.forEach(item => submenu.appendChild(item));
+                });
+            }
+
+            // Filter Products by Category
+            function filterProducts(category) {
+                const products = document.querySelectorAll('.product-card');
+                let hasProducts = false;
+
+                products.forEach(product => {
+                    const matchesCategory = category === 'all' || product.getAttribute('data-category').includes(category);
+                    product.style.display = matchesCategory ? 'block' : 'none';
+                    hasProducts = hasProducts || matchesCategory;
+                });
+
+                // Show or hide the "No products found" message
+                noProductsMessage.style.display = hasProducts ? 'none' : 'block';
+            }
+
+            // Event Listeners
+            document.getElementById('sort-by').addEventListener('change', sortProducts);
+            document.querySelector('.category-selector').addEventListener('click', event => {
+                if (event.target.tagName === 'A') {
+                    event.preventDefault();
+                    const category = event.target.getAttribute('href').replace('#', '');
+                    filterProducts(category);
+                }
+            });
+
+            // Initialize: Sort categories and show all products by default
+            sortCategories();
+            filterProducts('all');
+        });
+    </script>
 </body>
 </html>

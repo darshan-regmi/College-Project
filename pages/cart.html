@@ -63,6 +63,48 @@
             background: linear-gradient(45deg, #00838a, #036065);
             transform: scale(1.05);
         }
+
+        .remove-btn {
+            padding: 8px 12px;
+            background: linear-gradient(45deg, #00ADB5, #00838a);
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .remove-btn:hover {
+            background: linear-gradient(45deg, #00838a, #036065);
+            transform: scale(1.05);
+        }
+
+        #cart-empty {
+            text-align: center;
+            font-size: 1.5rem;
+            color: #333;
+            margin-top: 50px;
+        }
+
+        #cart-empty a {
+            display: inline-block;
+            text-decoration: none;
+            background: linear-gradient(45deg, #00ADB5, #00838a);
+            color: #fff;
+            padding: 6px 10px;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: background 0.3s ease, transform 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        #cart-empty a:hover {
+            background: linear-gradient(45deg, #00ADB5, #00838a);
+            transform: scale(1.05);
+        }
+    
         /* Responsive Styles */
 
         @media (max-width: 1024px) {
@@ -151,7 +193,7 @@
     </style>
 </head>
 
-<body>
+<body onload="loadCart()">
     <header class="header">
         <div class="logo">
             <a href="../index.html"><img src="../assets/img/logo.png" alt="Company Logo"></a>
@@ -190,33 +232,17 @@
                         <th>Price</th>
                         <th>Quantity</th>
                         <th>Total</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Rolex GTM</td>
-                        <td class="price">$10,000.00</td>
-                        <td><input type="number" value="1" min="1" class="quantity"></td>
-                        <td class="total">$10,000.00</td>
-                    </tr>
-                    <tr>
-                        <td>Casio M4T</td>
-                        <td class="price">$1,500.00</td>
-                        <td><input type="number" value="1" min="1" class="quantity"></td>
-                        <td class="total">$1,500.00</td>
-                    </tr>
-                    <tr>
-                        <td>Rado 2FT</td>
-                        <td class="price">$20,00.00</td>
-                        <td><input type="number" value="1" min="1" class="quantity"></td>
-                        <td class="total">$20,00.00</td>
-                    </tr>
+                    <!-- Cart items dynamically loaded here -->
                 </tbody>
             </table>
             <div class="cart-total">
-                <h2>Total: <span id="grand-total">$31,500.00</span></h2>
+                <h2>Total: <span id="grand-total">$0.00</span></h2>
             </div>
-            <a href="#" class="checkout-btn">Proceed to Checkout</a>
+            <a href="checkout.html" class="checkout-btn">Proceed to Checkout</a>
         </div>
     </main>
 
@@ -249,5 +275,72 @@
              Copyright  &copy; 2025 Watch Store
         </div>
     </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Load Cart Items
+            function loadCart() {
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const cartContainer = document.querySelector('tbody');
+                cartContainer.innerHTML = '';
+    
+                if (cart.length === 0) {
+                    document.querySelector('.cart-container').innerHTML = `
+                        <p id="cart-empty">Your cart is empty.<br><br><a href="products.html">Continue Shopping</a></p>`;
+                    document.getElementById('grand-total').textContent = '$0.00';
+                    return;
+                }
+    
+                cart.forEach((product, index) => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${product.name}</td>
+                        <td class="price">$${product.price.toFixed(2)}</td>
+                        <td><input type="number" value="${product.quantity}" min="1" class="quantity" data-index="${index}"></td>
+                        <td class="total">$${(product.price * product.quantity).toFixed(2)}</td>
+                        <td><button class="remove-btn" data-index="${index}">Remove</button></td>
+                    `;
+                    cartContainer.appendChild(row);
+                });
+    
+                updateEventListeners();
+                updateGrandTotal();
+            }
+    
+            // Update Quantities and Remove Buttons
+            function updateEventListeners() {
+                const quantities = document.querySelectorAll('.quantity');
+                const removeButtons = document.querySelectorAll('.remove-btn');
+    
+                quantities.forEach((input, index) => {
+                    input.addEventListener('input', () => {
+                        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                        const quantity = parseInt(input.value) || 1;
+                        cart[index].quantity = quantity;
+                        localStorage.setItem('cart', JSON.stringify(cart));
+                        loadCart();
+                    });
+                });
+    
+                removeButtons.forEach((button) => {
+                    button.addEventListener('click', () => {
+                        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                        const index = button.getAttribute('data-index');
+                        cart.splice(index, 1);
+                        localStorage.setItem('cart', JSON.stringify(cart));
+                        loadCart();
+                    });
+                });
+            }
+    
+            // Update Grand Total
+            function updateGrandTotal() {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const grandTotal = cart.reduce((total, item) => total + item.price * item.quantity, 0);
+                document.getElementById('grand-total').textContent = `$${grandTotal.toFixed(2)}`;
+            }
+    
+            loadCart();
+        });
+    </script>
 </body>
 </html>

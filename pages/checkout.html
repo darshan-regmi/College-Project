@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Checkout Container */
+        .checkout-container {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .checkout-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .checkout-header h1 {
+            font-size: 2.5rem;
+            color: #333;
+        }
+
+        /* Checkout Form */
+        .checkout-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input, .form-group textarea {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .cart-summary {
+            margin-top: 30px;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .cart-summary h2 {
+            margin-bottom: 15px;
+        }
+
+        .cart-summary table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .cart-summary th, .cart-summary td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .cart-summary th {
+            background-color: #f4f4f4;
+        }
+
+        .checkout-btn {
+            display: inline-block;
+            text-decoration: none;
+            background: linear-gradient(45deg, #00ADB5, #00838a);
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: background 0.3s ease, transform 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .checkout-btn:hover {
+            background: linear-gradient(45deg, #00838a, #036065);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="../index.html"><img src="../assets/img/logo.png" alt="Company Logo"></a>
+        </div>
+        <nav class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="blog.html">Blog</a>
+            <a href="research.html">Research</a>
+            <a href="about.html">About Us</a>
+        </nav>
+        <div class="header-tools">
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+            </div>
+            <div class="icons">
+                <a href="cart.html">
+                    <img src="../assets/img/icons/cart.png" alt="Cart Icon" class="icon">
+                </a>
+                <a href="profile.html">
+                    <img src="../assets/img/icons/user.png" alt="User Icon" class="icon">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="checkout-container">
+            <div class="checkout-header">
+                <h1>Checkout</h1>
+            </div>
+            <form class="checkout-form" id="checkout-form" method="POST" action="complete-purchase.html">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Shipping Address</label>
+                    <textarea id="address" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="card-number">Card Number</label>
+                    <input type="text" id="card-number" required>
+                </div>
+                <div class="form-group">
+                    <label for="expiry">Expiry Date (MM/YY)</label>
+                    <input type="text" id="expiry" required>
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" required>
+                </div>
+            </form>
+
+            <div class="cart-summary">
+                <h2>Cart Summary</h2>
+                <table id="cart-summary-table">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Cart items will be dynamically inserted here -->
+                    </tbody>
+                </table>
+            </div>
+            <a href="#" class="checkout-btn" id="complete-purchase-btn">Complete Purchase</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h1>About Us</h1>
+                <p>At WatcHUB, we offer a curated selection of quality timepieces for every occasion. Our goal is to provide exceptional products and service, helping you find the perfect watch for your style.</p>
+            </div>
+            <div class="footer-section links">
+                <h1>Quick Links</h1>
+                <ul>
+                    <a href="../index.html"><li>Home</li></a>
+                    <a href="products.html"><li>Products</li></a>
+                    <a href="blog.html"><li>Blog</li></a>
+                    <a href="research.html"><li>Research</li></a>
+                    <a href="about.html"><li>About Us</li></a>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h1>Contact Us</h1>
+                <form>
+                    <input type="email" name="email" class="text-input contact-input" placeholder="Your email address...">
+                    <textarea rows="4" name="message" class="text-input contact-input" placeholder="Your message..."></textarea>
+                    <button type="submit" class="btn btn-big contact-btn">Send</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+             Copyright  &copy; 2025 Watch Store
+        </div>
+    </footer>
+
+    <script>
+        // Sample cart items
+        const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Function to populate cart summary
+        function populateCartSummary() {
+            const tableBody = document.querySelector('#cart-summary-table tbody');
+            tableBody.innerHTML = ''; // Clear existing rows to avoid duplicates
+            let grandTotal = 0;
+
+            // Loop through the cart items and populate each row
+            cartItems.forEach(item => {
+                const name = item.name || 'Unnamed Item';
+                // Ensure price and quantity are numbers
+                const price = parseFloat(item.price) || 0;
+                const quantity = parseInt(item.quantity, 10) || 1;
+
+                // Calculate the total for this item
+                const total = price * quantity;
+                grandTotal += total;
+
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${item.name}</td>
+                    <td>$${price.toFixed(2)}</td>
+                    <td>${quantity}</td>
+                    <td>$${total.toFixed(2)}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+
+            // Create a row for the grand total
+            const grandTotalRow = document.createElement('tr');
+            grandTotalRow.innerHTML = `
+                <td colspan="3" style="text-align: right;"><strong>Grand Total:</strong></td>
+                <td><strong>$${grandTotal.toFixed(2)}</strong></td>
+            `;
+            tableBody.appendChild(grandTotalRow);
+        }
+
+        // Function to handle complete purchase
+        document.getElementById('complete-purchase-btn').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default anchor behavior
+
+            // Store user data in local storage
+            const userData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                address: document.getElementById('address').value,
+                cartItems: cartItems,
+                cardNumber: document.getElementById('card-number').value,
+                expiry: document.getElementById('expiry').value,
+                cvv: document.getElementById('cvv').value
+            };
+            localStorage.setItem('userData', JSON.stringify(userData));
+
+            // Redirect to complete purchase page
+            window.location.href = 'complete-purchase.html';
+        });
+
+        // Populate cart summary on page load
+        window.onload = populateCartSummary;
+
+        
+    </script>
+</body>
+</html> 

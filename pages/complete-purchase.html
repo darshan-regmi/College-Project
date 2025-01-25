@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .order-details {
+            background-color: #fff;
+            border-radius: 12px;
+            width: auto;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .order-details p {
+            margin-bottom: 10px;
+            align-items: center;
+            font-size: 1.2rem;
+        }
+
+        .order-details p strong {
+            margin-right: 10px;
+        }
+
+        /* Confirmation Container */
+        .confirmation-container {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .confirmation-header {
+            margin-bottom: 30px;
+        }
+
+        .confirmation-header h1 {
+            font-size: 2.5rem;
+            color: #333;
+        }
+
+        .order-summary {
+            margin-top: 30px;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .order-summary h2 {
+            margin-bottom: 15px;
+        }
+
+        .order-summary table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .order-summary th, .order-summary td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .order-summary th {
+            background-color: #f4f4f4;
+        }
+
+        .thank-you {
+            font-size: 1.5rem;
+            margin-top: 20px;
+            color: #00ADB5;
+        }
+
+        .back-to-home {
+            display: inline-block;
+            text-decoration: none;
+            background: linear-gradient(45deg, #00ADB5, #00838a);
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: background 0.3s ease, transform 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .back-to-home:hover {
+            background: linear-gradient(45deg, #00838a, #036065);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="../index.html"><img src="../assets/img/logo.png" alt="Company Logo"></a>
+        </div>
+        <nav class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="blog.html">Blog</a>
+            <a href="research.html">Research</a>
+            <a href="about.html">About Us</a>
+        </nav>
+        <div class="header-tools">
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+            </div>
+            <div class="icons">
+                <a href="cart.html">
+                    <img src="../assets/img/icons/cart.png" alt="Cart Icon" class="icon">
+                </a>
+                <a href="profile.html">
+                    <img src="../assets/img/icons/user.png" alt="User Icon" class="icon">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="confirmation-container">
+            <div class="confirmation-header">
+                <h1>Thank You for Your Purchase!</h1>
+            </div>
+            <div class="thank-you">Your order has been successfully placed.</div>
+            <div class="order-details" id="purchase-details" >
+                <!-- Purchase details will be dynamically inserted here -->
+
+            </div>
+            <div class="order-summary">
+                <h2>Order Summary</h2>
+                <table id="order-summary-table">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Order items will be dynamically inserted here -->
+                    </tbody>
+                </table>
+                <div class="grand-total"></div>
+            </div>
+            <a href="../index.html" class="back-to-home">Back to Home</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h1>About Us</h1>
+                <p>At WatcHUB, we offer a curated selection of quality timepieces for every occasion. Our goal is to provide exceptional products and service, helping you find the perfect watch for your style.</p>
+            </div>
+            <div class="footer-section links">
+                <h1>Quick Links</h1>
+                <ul>
+                    <a href="../index.html"><li>Home</li></a>
+                    <a href="products.html"><li>Products</li></a>
+                    <a href="blog.html"><li>Blog</li></a>
+                    <a href="research.html"><li>Research</li></a>
+                    <a href="about.html"><li>About Us</li></a>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h1>Contact Us</h1>
+                <form>
+                    <input type="email" name="email" class="text-input contact-input" placeholder="Your email address...">
+                    <textarea rows="4" name="message" class="text-input contact-input" placeholder="Your message..."></textarea>
+                    <button type="submit" class="btn btn-big contact-btn">Send</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+             Copyright  &copy; 2025 Watch Store
+        </div>
+    </footer>
+
+    <script>
+        // Retrieve user data and cart items from local storage
+        const userData = JSON.parse(localStorage.getItem('userData')) || {};
+        const cartItems = userData.cartItems || [];
+
+        // Function to populate order summary
+        function populateOrderSummary() {
+            const tableBody = document.querySelector('#order-summary-table tbody');
+            let grandTotal = 0;
+
+            // Clear any existing rows (in case the function is called multiple times)
+            tableBody.innerHTML = '';
+
+            if (cartItems.length === 0) {
+                // Display message if the cart is empty
+                const emptyMessage = document.createElement('tr');
+                emptyMessage.innerHTML = `
+                    <td colspan="4" style="text-align: center; font-style: italic;">
+                        No items in your order.
+                    </td>
+                `;
+                tableBody.appendChild(emptyMessage);
+                return;
+            }
+
+            // Populate rows for each cart item
+            cartItems.forEach(item => {
+                const name = item.name || 'Unnamed Item'; // Default to "Unnamed Item" if name is missing
+                const price = parseFloat(item.price) || 0; // Ensure price is a valid number
+                const quantity = parseInt(item.quantity, 10) || 1; // Default to 1 if quantity is missing
+                const total = price * quantity;
+                grandTotal += total;
+
+                // Add item row
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${name}</td>
+                    <td>$${price.toFixed(2)}</td>
+                    <td>${quantity}</td>
+                    <td>$${total.toFixed(2)}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+
+            // Add the grand total row
+            const grandTotalRow = document.createElement('tr');
+            grandTotalRow.innerHTML = `
+                <td colspan="3" style="text-align: right;"><strong>Grand Total:</strong></td>
+                <td><strong>$${grandTotal.toFixed(2)}</strong></td>
+            `;
+            tableBody.appendChild(grandTotalRow);
+        }
+
+        // Populate order summary on page load
+        window.onload = populateOrderSummary;
+
+         // Retrieve data from localStorage
+        const checkoutData = JSON.parse(localStorage.getItem("userData"));
+
+        // Display data if available
+        if (userData) {
+            const detailsDiv = document.getElementById("purchase-details");
+            detailsDiv.innerHTML = `
+                <p><strong>Full Name:</strong> ${userData.name}</p>
+                <p><strong>Email Address:</strong> ${userData.email}</p>
+                <p><strong>Shipping Address:</strong> ${userData.address}</p>
+            `;
+        } else {
+            document.getElementById("purchase-details").innerText = "No purchase details found.";
+        }
+    </script>
+</body>
+</html>
