@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventure Chrono - Tough & Reliable</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 90%;
+            margin: 40px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        .header a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+        }
+
+        .product-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .product-header h1 {
+            font-size: 30px;
+            color: #222;
+        }
+
+        .product-header p {
+            font-size: 18px;
+            color: #666;
+        }
+
+        .product-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-image img {
+            max-width: 500px;
+            border-radius: 8px;
+        }
+
+        .product-info {
+            max-width: 400px;
+        }
+
+        .price {
+            font-size: 26px;
+            color: #e74c3c;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .features, .description {
+            margin: 15px 0;
+        }
+
+        .features ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            font-size: 16px;
+            color: #444;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 20px;
+            font-size: 16px;
+            color: #fff;
+            background: #0077b6;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .button:hover {
+            background: #005f8b;
+        }
+
+        .reviews {
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .reviews h3 {
+            font-size: 24px;
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        .reviews .review {
+            font-size: 16px;
+            color: #555;
+            margin: 5px 0;
+        }
+
+        .footer {
+            background: #222;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #00adb5;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Adventure Chrono</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Products</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="product-header">
+            <h1>Adventure Chrono Series</h1>
+            <p>Your reliable companion for any journey</p>
+        </div>
+
+        <div class="product-details">
+            <div class="product-image">
+                <img src="watch.jpg" alt="Adventure Chrono Watch">
+            </div>
+            <div class="product-info">
+                <p class="price">$249.99</p>
+                <div class="description">
+                    <h3>Overview</h3>
+                    <p>Adventure Chrono is crafted for explorers. This rugged timepiece combines style with functionality, ensuring you’re prepared for every challenge. Water-resistant, shockproof, and equipped with advanced features, it’s built for your active lifestyle.</p>
+                </div>
+                <div class="features">
+                    <h3>Features:</h3>
+                    <ul>
+                        <li>Waterproof up to 300m</li>
+                        <li>Stainless steel case for durability</li>
+                        <li>Compass and thermometer</li>
+                        <li>Solar-powered battery</li>
+                        <li>Scratch-resistant sapphire glass</li>
+                    </ul>
+                </div>
+                <div class="buttons">
+                    <a href="#" class="button">Add to Cart</a>
+                    <a href="#" class="button">Buy Now</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="reviews">
+            <h3>What Our Customers Say</h3>
+            <div class="review">⭐⭐⭐⭐⭐ "Best adventure watch I’ve ever owned!" - John D.</div>
+            <div class="review">⭐⭐⭐⭐ "Durable and stylish, highly recommend!" - Sarah K.</div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 Adventure Chrono | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+</body>
+</html>

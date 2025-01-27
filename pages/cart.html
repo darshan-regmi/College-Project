@@ -286,7 +286,7 @@
                 if (cart.length === 0) {
                     document.querySelector('.cart-container').innerHTML = `
                         <p id="cart-empty">Your cart is empty.<br><br><a href="products.html">Continue Shopping</a></p>`;
-                    document.getElementById('grand-total').textContent = '$0.00';
+                    document.getElementById('grand-total').textContent = 'NPR0.00';
                     return;
                 }
     
@@ -294,9 +294,9 @@
                     const row = document.createElement('tr');
                     row.innerHTML = `
                         <td>${product.name}</td>
-                        <td class="price">$${product.price.toFixed(2)}</td>
+                        <td class="price">NPR${product.price.toFixed(2)}</td>
                         <td><input type="number" value="${product.quantity}" min="1" class="quantity" data-index="${index}"></td>
-                        <td class="total">$${(product.price * product.quantity).toFixed(2)}</td>
+                        <td class="total">NPR${(product.price * product.quantity).toFixed(2)}</td>
                         <td><button class="remove-btn" data-index="${index}">Remove</button></td>
                     `;
                     cartContainer.appendChild(row);
@@ -336,7 +336,7 @@
             function updateGrandTotal() {
                 const cart = JSON.parse(localStorage.getItem('cart')) || [];
                 const grandTotal = cart.reduce((total, item) => total + item.price * item.quantity, 0);
-                document.getElementById('grand-total').textContent = `$${grandTotal.toFixed(2)}`;
+                document.getElementById('grand-total').textContent = `NPR${grandTotal.toFixed(2)}`;
             }
     
             loadCart();
