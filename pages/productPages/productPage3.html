@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Discover the timeless elegance of the Brihaspari Black watch. The perfect blend of luxury and style.">
+    <meta name="description"
+        content="Discover the timeless elegance of the Brihaspari Black watch. The perfect blend of luxury and style.">
     <meta name="keywords" content="Brihaspari Black, Luxury Watch, Men's Watch, Stylish Watch, Elegant Timepiece">
     <meta name="author" content="Watch Store">
     <title>Brihaspari Black - Luxury Timepiece</title>
@@ -35,6 +37,79 @@
             color: #888;
         }
 
+        .slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            width: 100%;
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
+
+        .product-info {
+            max-width: 50%;
+            margin-left: 20px;
+        }
+
+        .price {
+            font-size: 24px;
+            color: #e53935;
+            margin-top: 10px;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            padding: 12px 25px;
+            font-size: 16px;
+            background: linear-gradient(45deg, #00ADB5, #00838a);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            text-decoration: none;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .button:hover {
+            background: linear-gradient(45deg, #00838a, #036065);
+            transform: scale(1.05);
+        }
+
         .product-details {
             display: flex;
             justify-content: space-between;
@@ -57,16 +132,22 @@
             margin-top: 10px;
         }
 
-        .description, .features, .specifications {
+        .description,
+        .features,
+        .specifications {
             margin-bottom: 20px;
         }
 
-        .description h3, .features h3, .specifications h3 {
+        .description h3,
+        .features h3,
+        .specifications h3 {
             color: #333;
             font-size: 22px;
         }
 
-        .description p, .features ul, .specifications table {
+        .description p,
+        .features ul,
+        .specifications table {
             color: #666;
             font-size: 16px;
         }
@@ -146,6 +227,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <header class="header">
@@ -181,14 +263,23 @@
         </div>
 
         <div class="product-details">
-            <div class="product-image">
-                <img src="../../assets/img/products/product3.jpg" alt="Brihaspari Black Watch">
+            <div class="slider-container">
+                <div class="slider">
+                    <img src="../../assets/img/products/product3.jpg" alt="Watch 1" class="slide">
+                    <img src="../../assets/img/products/product3.jpg" alt="Watch 2" class="slide">
+                    <img src="../../assets/img/products/product3.jpg" alt="Watch 3" class="slide">
+                </div>
+                <button class="slider-btn prev" onclick="changeSlide(-1)">&#10094;</button>
+                <button class="slider-btn next" onclick="changeSlide(1)">&#10095;</button>
             </div>
             <div class="product-info">
                 <p class="price">NPR 23,999.00</p>
                 <div class="description">
                     <h3>Product Description</h3>
-                    <p>The Brihaspari Black is a luxury timepiece designed to impress. Featuring a sleek black dial, this watch is complemented by a polished stainless steel case and a premium leather strap. Whether worn casually or on formal occasions, this watch is sure to turn heads with its modern and sophisticated look.</p>
+                    <p>The Brihaspari Black is a luxury timepiece designed to impress. Featuring a sleek black dial,
+                        this watch is complemented by a polished stainless steel case and a premium leather strap.
+                        Whether worn casually or on formal occasions, this watch is sure to turn heads with its modern
+                        and sophisticated look.</p>
                 </div>
                 <div class="features">
                     <h3>Key Features:</h3>
@@ -234,16 +325,21 @@
 
         <div class="reviews">
             <h3>Customer Reviews</h3>
-            <div class="review">⭐⭐⭐⭐⭐ “The Brihaspari Black is stunning! The leather strap is so comfortable, and it goes perfectly with my formal outfits.” – Ramesh S.</div>
-            <div class="review">⭐⭐⭐⭐☆ “The watch looks amazing, but the case is a bit large for my wrist. Nonetheless, I love it.” – Priya L.</div>
+            <div class="review">⭐⭐⭐⭐⭐ “The Brihaspari Black is stunning! The leather strap is so comfortable, and it
+                goes perfectly with my formal outfits.” – Ramesh S.</div>
+            <div class="review">⭐⭐⭐⭐☆ “The watch looks amazing, but the case is a bit large for my wrist. Nonetheless, I
+                love it.” – Priya L.</div>
         </div>
 
         <div class="related-products">
             <h3>Related Products</h3>
             <ul>
-                <li><a href="productPage2.html"><img src="../../assets/img/products/product2.jpg" alt="Ultima Watch Circle"></a><br>Ultima Watch Circle</li>
-                <li><a href="productPage25.html"><img src="../../assets/img/products/product28.jpg" alt="Seiko 5 Sports"></a><br>Seiko 5 Sports</li>
-                <li><a href="productPage13.html"><img src="../../assets/img/products/product8.jpg" alt="Titan Quartz"></a><br>Titan Quartz</li>
+                <li><a href="productPage2.html"><img src="../../assets/img/products/product2.jpg"
+                            alt="Ultima Watch Circle"></a><br>Ultima Watch Circle</li>
+                <li><a href="productPage25.html"><img src="../../assets/img/products/product28.jpg"
+                            alt="Seiko 5 Sports"></a><br>Seiko 5 Sports</li>
+                <li><a href="productPage13.html"><img src="../../assets/img/products/product8.jpg"
+                            alt="Titan Quartz"></a><br>Titan Quartz</li>
             </ul>
         </div>
     </div>
@@ -252,31 +348,64 @@
         <div class="footer-content">
             <div class="footer-section about">
                 <h1>About Us</h1>
-                <p>At WatcHUB, we offer a curated selection of quality timepieces for every occasion. Our goal is to provide exceptional products and service, helping you find the perfect watch for your style.</p>
+                <p>At WatcHUB, we offer a curated selection of quality timepieces for every occasion. Our goal is to
+                    provide exceptional products and service, helping you find the perfect watch for your style.</p>
             </div>
             <div class="footer-section links">
                 <h1>Quick Links</h1>
                 <ul>
-                    <a href="../../index.html"><li>Home</li></a>
-                    <a href="../products.html"><li>Products</li></a>
-                    <a href="../blog.html"><li>Blog</li></a>
-                    <a href="../research.html"><li>Research</li></a>
-                    <a href="../about.html"><li>About Us</li></a>
+                    <a href="../../index.html">
+                        <li>Home</li>
+                    </a>
+                    <a href="../products.html">
+                        <li>Products</li>
+                    </a>
+                    <a href="../blog.html">
+                        <li>Blog</li>
+                    </a>
+                    <a href="../research.html">
+                        <li>Research</li>
+                    </a>
+                    <a href="../about.html">
+                        <li>About Us</li>
+                    </a>
                 </ul>
             </div>
             <div class="footer-section contact">
                 <h1>Contact Us</h1>
                 <form>
-                    <input type="email" name="email" class="text-input contact-input" placeholder="Your email address...">
-                    <textarea rows="4" name="message" class="text-input contact-input" placeholder="Your message..."></textarea>
+                    <input type="email" name="email" class="text-input contact-input"
+                        placeholder="Your email address...">
+                    <textarea rows="4" name="message" class="text-input contact-input"
+                        placeholder="Your message..."></textarea>
                     <button type="submit" class="btn btn-big contact-btn">Send</button>
                 </form>
             </div>
         </div>
         <div class="footer-bottom">
-            Copyright  &copy; 2025 Watch Store
+            Copyright &copy; 2025 Watch Store
         </div>
     </footer>
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
 
+        function changeSlide(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) {
+                currentIndex = totalSlides - 1;
+            } else if (currentIndex >= totalSlides) {
+                currentIndex = 0;
+            }
+            updateSlider();
+        }
+
+        function updateSlider() {
+            const offset = -currentIndex * 100;
+            document.querySelector('.slider').style.transform = `translateX(${offset}%)`;
+        }
+    </script>
 </body>
+
 </html>
