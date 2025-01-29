@@ -233,9 +233,9 @@
                 const row = document.createElement('tr');
                 row.innerHTML = `
                     <td>${name}</td>
-                    <td>NPR${price.toFixed(2)}</td>
+                    <td>NPR ${price.toFixed(2)}</td>
                     <td>${quantity}</td>
-                    <td>NPR${total.toFixed(2)}</td>
+                    <td>NPR ${total.toFixed(2)}</td>
                 `;
                 tableBody.appendChild(row);
             });
@@ -244,7 +244,7 @@
             const grandTotalRow = document.createElement('tr');
             grandTotalRow.innerHTML = `
                 <td colspan="3" style="text-align: right;"><strong>Grand Total:</strong></td>
-                <td><strong>NPR${grandTotal.toFixed(2)}</strong></td>
+                <td><strong>NPR ${grandTotal.toFixed(2)}</strong></td>
             `;
             tableBody.appendChild(grandTotalRow);
         }
