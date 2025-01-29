@@ -398,6 +398,39 @@
             const offset = -currentIndex * 100;
             document.querySelector('.slider').style.transform = `translateX(${offset}%)`;
         }
+
+        // Get the form elements
+        const form = document.querySelector('form');
+        const emailInput = document.querySelector('.contact-input[name="email"]');
+        const messageInput = document.querySelector('.contact-input[name="message"]');
+        const contactBtn = document.querySelector('.contact-btn');
+
+        // Add event listener to the form
+        form.addEventListener('submit', (e) => {
+            // Prevent default form submission
+            e.preventDefault();
+
+            // Validate email input
+            if (!validateEmail(emailInput.value)) {
+                alert('Please enter a valid email address');
+                return;
+            }
+
+            // Validate message input
+            if (messageInput.value.trim() === '') {
+                alert('Please enter a message');
+                return;
+            }
+
+            // If validation is successful, submit the form
+            form.submit();
+        });
+
+        // Function to validate email
+        function validateEmail(email) {
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            return emailRegex.test(email);
+        }
     </script>
 </body>
 
