@@ -1,263 +1,484 @@
+..
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WatcHUB - About Us</title>
-    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/styles.css" />
     <style>
-        /* Hero Section */
-        .hero {
-            background: url('../assets/img/banners/aboutUs.jpg') no-repeat center center/cover;
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-        }
+      :root {
+        --accent-color: #00adb5;
+        --text-primary: #333;
+        --text-secondary: #666;
+      }
 
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
+      /* Hero Section */
+      .hero {
+        background: url("../assets/img/banners/aboutUs.jpg") no-repeat center
+          center/cover;
+        color: white;
+        padding: 120px 20px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
 
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+      }
 
-        /* Our Story Section */
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+        font-weight: 700;
+      }
+
+      .hero p {
+        font-size: 1.4rem;
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.6;
+      }
+
+      /* Our Story Section */
+      .our-story {
+        display: flex;
+        align-items: center;
+        max-width: 1200px;
+        margin: 60px auto;
+        padding: 30px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+      }
+
+      .our-story:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .our-story img {
+        width: 45%;
+        border-radius: 12px;
+        object-fit: cover;
+        margin-right: 30px;
+        transition: all 0.3s ease;
+        border: 4px solid white;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .our-story img:hover {
+        transform: scale(1.05);
+      }
+
+      .our-story-text {
+        flex: 1;
+        padding: 0 30px;
+      }
+
+      .our-story h2 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+        color: var(--accent-color);
+      }
+
+      .our-story p {
+        margin: 10px 0;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: var(--text-secondary);
+      }
+
+      /* Meet Our Team Section */
+      .team-section {
+        max-width: 1200px;
+        margin: 80px auto;
+        padding: 0 20px;
+      }
+
+      .team-section h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 50px;
+        color: var(--accent-color);
+      }
+
+      .team-member {
+        display: flex;
+        align-items: center;
+        margin-bottom: 40px;
+        padding: 30px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+      }
+
+      .team-member:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .team-member img {
+        width: 240px;
+        height: 320px;
+        border-radius: 12px;
+        object-fit: cover;
+        margin-right: 30px;
+        transition: all 0.3s ease;
+        border: 4px solid white;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .team-member img:hover {
+        transform: scale(1.05);
+      }
+
+      .member-info {
+        flex: 1;
+      }
+
+      .member-info h3 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+        color: var(--accent-color);
+      }
+
+      .member-info p {
+        margin: 10px 0;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: var(--text-secondary);
+      }
+
+      .member-info .role {
+        font-weight: 600;
+        color: var(--accent-color);
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+      }
+
+      .read-more {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 10px 20px;
+        background: var(--accent-color);
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+
+      .read-more:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        background: #0097a7;
+      }
+
+      @media (max-width: 992px) {
         .our-story {
-            display: flex;
-            align-items: center;
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 20px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          flex-direction: column;
+          text-align: center;
+          padding: 20px;
         }
 
         .our-story img {
-            width: 50%;
-            border-radius: 8px;
+          width: 100%;
+          margin: 0 0 20px 0;
         }
 
         .our-story-text {
-            padding: 20px;
-            flex: 1;
-        }
-
-        .our-story h2 {
-            color: #00ADB5;
-            margin-bottom: 20px;
-        }
-
-        /* Meet Our Team Section */
-        .team-section {
-            max-width: 900px;
-            margin: 40px auto;
-            text-align: center;
-        }
-
-        .team-section h2 {
-            color: #00ADB5;
-            margin-bottom: 20px;
+          padding: 0;
         }
 
         .team-member {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            background: #f9f9f9;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .team-member:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+          flex-direction: column;
+          text-align: center;
         }
 
         .team-member img {
-            width: 260px;
-            height: 350px;
-            border-radius: 50%;
-            margin-right: 20px;
-            border: 2px solid #6b747e;
+          margin: 0 0 20px 0;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 2.5rem;
         }
 
-        .member-info {
-            flex: 1;
+        .hero p {
+          font-size: 1.1rem;
+        }
+
+        .team-member {
+          padding: 20px;
         }
 
         .member-info h3 {
-            margin-bottom: 5px;
-            font-size: 1.5rem;
-            color: #00ADB5;
+          font-size: 1.5rem;
         }
 
-        .member-info p {
-            margin: 5px 0;
+        .our-story {
+          padding: 20px;
         }
+
+        .our-story h2 {
+          font-size: 1.5rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero h1 {
+          font-size: 2rem;
+        }
+
+        .team-member img {
+          width: 180px;
+          height: 240px;
+        }
+
+        .our-story img {
+          width: 180px;
+          height: 240px;
+        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <header class="header">
-        <!-- Logo and Navigation -->
-        <div class="logo">
-            <a href="../index.html"><img src="../assets/img/logo.png" alt="Company Logo"></a>
+      <!-- Logo and Navigation -->
+      <div class="logo">
+        <a href="../index.html"
+          ><img src="../assets/img/logo.png" alt="Company Logo"
+        /></a>
+      </div>
+      <nav class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="blog.html">Blog</a>
+        <a href="research.html">Research</a>
+        <a href="about.html" class="active">About Us</a>
+      </nav>
+      <div class="header-tools">
+        <div class="search-bar">
+          <input type="text" placeholder="Search" />
         </div>
-        <nav class="nav-links">
-            <a href="../index.html">Home</a>
-            <a href="products.html">Products</a>
-            <a href="blog.html">Blog</a>
-            <a href="research.html">Research</a>
-            <a href="about.html" class="active">About Us</a>
-        </nav>
-        <div class="header-tools">
-            <div class="search-bar">
-                <input type="text" placeholder="Search">
-            </div>
-            <div class="icons">
-                <a href="cart.html">
-                    <img src="../assets/img/icons/cart.png" alt="Cart Icon" class="icon">
-                </a>
-                <a href="profile.html">
-                    <img src="../assets/img/icons/user.png" alt="User Icon" class="icon">
-                </a>
-            </div>
+        <div class="icons">
+          <a href="cart.html">
+            <img
+              src="../assets/img/icons/cart.png"
+              alt="Cart Icon"
+              class="icon"
+            />
+          </a>
+          <a href="profile.html">
+            <img
+              src="../assets/img/icons/user.png"
+              alt="User Icon"
+              class="icon"
+            />
+          </a>
         </div>
+      </div>
     </header>
 
     <div class="hero">
-        <h1>Our Story</h1>
-        <p>Discover the journey of our e-commerce platform and the dedicated team behind it.</p>
+      <h1>Our Story</h1>
+      <p>
+        Discover the journey of our e-commerce platform and the dedicated team
+        behind it.
+      </p>
     </div>
 
     <main>
-        <section class="our-story">
-            <img src="../assets/img/aboutUs/ourStory.jpg" alt="Our Story Image">
-            <div class="our-story-text">
-                <h2>Our Journey</h2>
-                <p>Founded with a vision to revolutionize online shopping, our team is dedicated to providing a seamless and engaging e-commerce experience. We believe in innovation, collaboration, and excellence in every project we undertake.</p>
-            </div>
-        </section>
+      <section class="our-story">
+        <img src="../assets/img/aboutUs/ourStory.jpg" alt="Our Story Image" />
+        <div class="our-story-text">
+          <h2>Our Journey</h2>
+          <p>
+            Founded with a vision to revolutionize online shopping, our team is
+            dedicated to providing a seamless and engaging e-commerce
+            experience. We believe in innovation, collaboration, and excellence
+            in every project we undertake.
+          </p>
+        </div>
+      </section>
 
-        <section class="team-section">
-            <h2>Meet Our Team</h2>
+      <section class="team-section">
+        <h2>Meet Our Team</h2>
 
-            <div class="team-member">
-                <img src="../assets/img/team/teamLeader.jpg" alt="Team Leader">
-                <div class="member-info">
-                    <h3>Darshan Regmi</h3>
-                    <p><strong>Role:</strong> Team Leader</p>
-                    <p><strong>Short Bio:</strong> Darshan is a visionary leader with over years of experience in web developnment. He drives the team towards achieving innovative solutions and exceptional user experiences.</p>
-                </div>
-            </div>
+        <div class="team-member">
+          <img src="../assets/img/team/teamLeader.jpg" alt="Team Leader" />
+          <div class="member-info">
+            <h3>Darshan Regmi</h3>
+            <p class="role">Team Leader</p>
+            <p>
+              Darshan is a visionary leader with over years of experience in web
+              development. He drives the team towards achieving innovative
+              solutions and exceptional user experiences.
+            </p>
+            <a href="portfolioPage/portfolio1.html" class="read-more"
+              >Read More</a
+            >
+          </div>
+        </div>
 
-            <div class="team-member" style="flex-direction: row-reverse;">
-                <img src="../assets/img/team/gaurav.jpg" alt="Gaurav Poudel">
-                <div class="member-info">
-                    <h3>Gaurav Poudel</h3>
-                    <p><strong>Role:</strong> Designer</p>
-                    <p><strong>Short Bio:</strong> Gaurav specializes in building awesome design, ensuring seamless functionality and user engagement.</p>
-                </div>
-            </div>
+        <div class="team-member" style="flex-direction: row-reverse">
+          <img src="../assets/img/team/gaurav.jpg" alt="Gaurav Poudel" />
+          <div class="member-info">
+            <h3>Gaurav Poudel</h3>
+            <p class="role">Designer</p>
+            <p>
+              Gaurav specializes in building awesome design, ensuring seamless
+              functionality and user engagement.
+            </p>
+            <a href="portfolioPage/portfolio2.html" class="read-more"
+              >Read More</a
+            >
+          </div>
+        </div>
 
-            <div class="team-member">
-                <img src="../assets/img/team/minham.jpg" alt="Minham Singh Ale">
-                <div class="member-info">
-                    <h3>Minham Singh Ale</h3>
-                    <p><strong>Role:</strong> Blogger</p>
-                    <p><strong>Short Bio:</strong> Minham focuses on creating intresting and productive blogs and articles for the betterment of the company.</p>
-                </div>
-            </div>
+        <div class="team-member">
+          <img src="../assets/img/team/minham.jpg" alt="Minham Singh Ale" />
+          <div class="member-info">
+            <h3>Minham Singh Ale</h3>
+            <p class="role">Blogger</p>
+            <p>
+              Minham focuses on creating interesting and productive blogs and
+              articles for the betterment of the company.
+            </p>
+            <a href="portfolioPage/portfolio3.html" class="read-more"
+              >Read More</a
+            >
+          </div>
+        </div>
 
-            <div class="team-member" style="flex-direction: row-reverse;">
-                <img src="../assets/img/team/prajwol.jpg" alt="Prajwol Srestha">
-                <div class="member-info">
-                    <h3>Prajwol Srestha</h3>
-                    <p><strong>Role:</strong> Research Specialist and Developer</p>
-                    <p><strong>Short Bio:</strong> Prajwol is an expert in market research and analysis, providing valuable insights to drive business growth and innovation.</p>
-                </div>
-            </div>
+        <div class="team-member" style="flex-direction: row-reverse">
+          <img src="../assets/img/team/prajwol.jpg" alt="Prajwol Srestha" />
+          <div class="member-info">
+            <h3>Prajwol Srestha</h3>
+            <p class="role">Research Specialist and Developer</p>
+            <p>
+              Prajwol is an expert in market research and analysis, providing
+              valuable insights to drive business growth and innovation.
+            </p>
+            <a href="portfolioPage/portfolio4.html" class="read-more"
+              >Read More</a
+            >
+          </div>
+        </div>
 
-            <div class="team-member">
-                <img src="../assets/img/team/prajeet.jpg" alt="Prajeet Khatri">
-                <div class="member-info">
-                    <h3>Prajeet Khatri</h3>
-                    <p><strong>Role:</strong> Data Provider and Product Manager</p>
-                    <p><strong>Short Bio:</strong> Prajeet is responsible for providing accurate and reliable data to support business decisions and product development.</p>
-                </div>
-            </div>
-        </section>
+        <div class="team-member">
+          <img src="../assets/img/team/prajeet.jpg" alt="Prajeet Khatri" />
+          <div class="member-info">
+            <h3>Prajeet Khatri</h3>
+            <p class="role">Data Provider and Product Manager</p>
+            <p>
+              Prajeet is responsible for providing accurate and reliable data to
+              support business decisions and product development.
+            </p>
+            <a href="portfolioPage/portfolio5.html" class="read-more"
+              >Read More</a
+            >
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section about">
-                <h1>About Us</h1>
-                <p>At WatcHUB, we offer a curated selection of quality timepieces for every occasion. Our goal is to provide exceptional products and service, helping you find the perfect watch for your style.</p>
-            </div>
-            <div class="footer-section links">
-                <h1>Quick Links</h1>
-                <ul>
-                    <a href="../index.html"><li>Home</li></a>
-                    <a href="products.html"><li>Products</li></a>
-                    <a href="blog.html"><li>Blog</li></a>
-                    <a href="research.html"><li>Research</li></a>
-                    <a href="about.html"><li>About Us</li></a>
-                </ul>
-            </div>
-            <div class="footer-section contact">
-                <h1>Contact Us</h1>
-                <form>
-                    <input type="email" name="email" class="text-input contact-input" placeholder="Your email address...">
-                    <textarea rows="4" name="message" class="text-input contact-input" placeholder="Your message..."></textarea>
-                    <button type="submit" class="btn btn-big contact-btn">Send</button>
-                </form>
-            </div>
+      <div class="footer-content">
+        <div class="footer-section about">
+          <h1>About Us</h1>
+          <p>
+            At WatcHUB, we offer a curated selection of quality timepieces for
+            every occasion. Our goal is to provide exceptional products and
+            service, helping you find the perfect watch for your style.
+          </p>
         </div>
-        <div class="footer-bottom">
-            Copyright  &copy; 2025 Watch Store
+        <div class="footer-section links">
+          <h1>Quick Links</h1>
+          <ul>
+            <a href="../index.html"><li>Home</li></a>
+            <a href="products.html"><li>Products</li></a>
+            <a href="blog.html"><li>Blog</li></a>
+            <a href="research.html"><li>Research</li></a>
+            <a href="about.html"><li>About Us</li></a>
+          </ul>
         </div>
+        <div class="footer-section contact">
+          <h1>Contact Us</h1>
+          <form>
+            <input
+              type="email"
+              name="email"
+              class="text-input contact-input"
+              placeholder="Your email address..."
+            />
+            <textarea
+              rows="4"
+              name="message"
+              class="text-input contact-input"
+              placeholder="Your message..."
+            ></textarea>
+            <button type="submit" class="btn btn-big contact-btn">Send</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">Copyright &copy; 2025 Watch Store</div>
     </footer>
     <script>
-        // Get the form elements
-        const form = document.querySelector('form');
-        const emailInput = document.querySelector('.contact-input[name="email"]');
-        const messageInput = document.querySelector('.contact-input[name="message"]');
-        const contactBtn = document.querySelector('.contact-btn');
+      // Get the form elements
+      const form = document.querySelector("form");
+      const emailInput = document.querySelector('.contact-input[name="email"]');
+      const messageInput = document.querySelector(
+        '.contact-input[name="message"]'
+      );
+      const contactBtn = document.querySelector(".contact-btn");
 
-        // Add event listener to the form
-        form.addEventListener('submit', (e) => {
-            // Prevent default form submission
-            e.preventDefault();
+      // Add event listener to the form
+      form.addEventListener("submit", (e) => {
+        // Prevent default form submission
+        e.preventDefault();
 
-            // Validate email input
-            if (!validateEmail(emailInput.value)) {
-                alert('Please enter a valid email address');
-                return;
-            }
-
-            // Validate message input
-            if (messageInput.value.trim() === '') {
-                alert('Please enter a message');
-                return;
-            }
-
-            // If validation is successful, submit the form
-            form.submit();
-        });
-
-        // Function to validate email
-        function validateEmail(email) {
-            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-            return emailRegex.test(email);
+        // Validate email input
+        if (!validateEmail(emailInput.value)) {
+          alert("Please enter a valid email address");
+          return;
         }
+
+        // Validate message input
+        if (messageInput.value.trim() === "") {
+          alert("Please enter a message");
+          return;
+        }
+
+        // If validation is successful, submit the form
+        form.submit();
+      });
+
+      // Function to validate email
+      function validateEmail(email) {
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return emailRegex.test(email);
+      }
     </script>
-</body>
+  </body>
 </html>
