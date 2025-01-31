@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minham Singh Ale - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        :root {
+            --gradient-1: linear-gradient(135deg, #f6f8fd 0%, #ffffff 100%);
+            --gradient-2: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            --accent-color: #3498db;
+            --text-primary: #2c3e50;
+            --text-secondary: #5a7184;
+        }
+
+        body {
+            background: var(--gradient-1);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            flex: 1;
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 4px;
+            object-fit: cover;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+        }
+
+        .profile-image:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        }
+
+        .profile-info h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            background: var(--gradient-2);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 600;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-3px);
+        }
+
+        .section h2 {
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            font-weight: 500;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section h2 i {
+            color: var(--accent-color);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-item {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 0.8rem;
+            border-radius: 6px;
+            text-align: center;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(52, 152, 219, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .skill-item:hover {
+            background: var(--gradient-2);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .skill-item i {
+            font-size: 1rem;
+        }
+
+        .languages-list {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .language-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+            transition: transform 0.3s ease;
+        }
+
+        .language-item:hover {
+            transform: translateX(5px);
+        }
+
+        .language-item i {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+        }
+
+        .education-item {
+            transition: transform 0.3s ease;
+            padding: 1rem;
+            border-radius: 6px;
+        }
+
+        .education-item:hover {
+            background: rgba(255, 255, 255, 0.5);
+            transform: translateX(5px);
+        }
+
+        .education-item h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+            color: var(--text-primary);
+        }
+
+        .education-item p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        ul li {
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        ul li:hover {
+            transform: translateX(5px);
+        }
+
+        ul li i {
+            color: var(--accent-color);
+        }
+
+        .footer {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 0;
+            margin-top: auto;
+            border-top: 1px solid rgba(52, 152, 219, 0.1);
+        }
+
+        .social-links {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+        }
+
+        .social-link {
+            color: var(--text-primary);
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            padding: 0.5rem;
+            border-radius: 8px;
+        }
+
+        .social-link:hover {
+            color: var(--accent-color);
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .social-link span {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .social-links {
+                gap: 1.5rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .social-link {
+                font-size: 1.2rem;
+                padding: 0.4rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .social-links {
+                gap: 1rem;
+            }
+            
+            .social-link span {
+                display: none;
+            }
+            
+            .social-link {
+                font-size: 1.4rem;
+                padding: 0.8rem;
+            }
+        }
+
+        /* Updated Go Back Button Styles */
+        .go-back {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 3.5rem;
+            height: 3.5rem;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 50%;
+            color: var(--text-primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 100;
+        }
+
+        .go-back i {
+            font-size: 1.2rem;
+        }
+
+        .go-back:hover {
+            transform: translateY(-3px);
+            background: var(--gradient-2);
+            color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 768px) {
+            .go-back {
+                bottom: 1.5rem;
+                right: 1.5rem;
+                width: 3rem;
+                height: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="../about.html" class="go-back" aria-label="Go back to previous page">
+        <i class="fas fa-arrow-left"></i>
+    </a>
+
+    <div class="container">
+        <section class="profile-section">
+            <img src="../../assets/img/team/minham.jpg" alt="Minham Singh Ale" class="profile-image">
+            <div class="profile-info">
+                <h1>Minham Singh Ale</h1>
+                <p>Computer Science Student</p>
+                <p>Passionate about games,photography and artificial intelligence</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2><i class="fas fa-user"></i> About Me</h2>
+            <p>I am a first year Computer Science student with a keen interest in software development.I enjoy taking authentic and magnificent photos of nature and enjoy playing games</p>
+        </section>
+
+        <section class="section">
+            <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+            <div class="education-item">
+                <h3>BSc (Hons) Computing</h3>
+                <p>Infromatics College Pokhara | 2025 - Present</p>
+                <p>GPA: ---</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2><i class="fas fa-code"></i> Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item"><i class="fab fa-html5"></i> HTML5</div>
+                <div class="skill-item"><i class="fab fa-css3-alt"></i> CSS3</div>
+                <div class="skill-item"><i class="fab fa-js"></i> JavaScript</div>
+                <div class="skill-item"><i class="fab fa-git-alt"></i> Git</div>
+                <div class="skill-item"><i class="fas fa-database"></i> SQL</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2><i class="fas fa-language"></i> Languages</h2>
+            <div class="languages-list">
+                <div class="language-item">
+                    <i class="fas fa-check"></i>
+                    <span>Nepali (Native)</span>
+                </div>
+                <div class="language-item">
+                    <i class="fas fa-check"></i>
+                    <span>English (Intermediate)</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="social-links">
+            <a href="https://github.com/shogun110" class="social-link" target="_blank" aria-label="GitHub Profile">
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+            </a>
+            <a href="https://instagram.com/ei_x78" class="social-link" target="_blank" aria-label="Instagram Profile">
+                <i class="fab fa-instagram"></i>
+                <span>Instagram</span>
+            </a>
+            <a href="mailto:minham.ale.a24@icp.edu.np" class="social-link" aria-label="Email Contact">
+                <i class="fas fa-envelope"></i>
+                <span>Email</span>
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
