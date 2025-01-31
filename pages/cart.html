@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,7 +31,8 @@
             margin-bottom: 20px;
         }
 
-        th, td {
+        th,
+        td {
             padding: 15px;
             text-align: left;
             border-bottom: 1px solid #ddd;
@@ -99,12 +101,12 @@
             transition: background 0.3s ease, transform 0.3s ease;
             margin-top: 20px;
         }
-        
+
         #cart-empty a:hover {
             background: linear-gradient(45deg, #00ADB5, #00838a);
             transform: scale(1.05);
         }
-    
+
         /* Responsive Styles */
 
         @media (max-width: 1024px) {
@@ -121,7 +123,8 @@
                 font-size: 14px;
             }
 
-            th, td {
+            th,
+            td {
                 padding: 12px;
             }
 
@@ -149,7 +152,8 @@
                 font-size: 13px;
             }
 
-            th, td {
+            th,
+            td {
                 padding: 10px;
             }
 
@@ -177,7 +181,8 @@
                 font-size: 12px;
             }
 
-            th, td {
+            th,
+            td {
                 padding: 8px;
             }
 
@@ -250,29 +255,42 @@
         <div class="footer-content">
             <div class="footer-section about">
                 <h1>About Us</h1>
-                <p>At WatcHUB, we offer a curated selection of quality timepieces for every occasion. Our goal is to provide exceptional products and service, helping you find the perfect watch for your style.</p>
+                <p>At WatcHUB, we offer a curated selection of quality timepieces for every occasion. Our goal is to
+                    provide exceptional products and service, helping you find the perfect watch for your style.</p>
             </div>
             <div class="footer-section links">
                 <h1>Quick Links</h1>
                 <ul>
-                    <a href="../index.html"><li>Home</li></a>
-                    <a href="products.html"><li>Products</li></a>
-                    <a href="blog.html"><li>Blog</li></a>
-                    <a href="research.html"><li>Research</li></a>
-                    <a href="about.html"><li>About Us</li></a>
+                    <a href="../index.html">
+                        <li>Home</li>
+                    </a>
+                    <a href="products.html">
+                        <li>Products</li>
+                    </a>
+                    <a href="blog.html">
+                        <li>Blog</li>
+                    </a>
+                    <a href="research.html">
+                        <li>Research</li>
+                    </a>
+                    <a href="about.html">
+                        <li>About Us</li>
+                    </a>
                 </ul>
             </div>
             <div class="footer-section contact">
                 <h1>Contact Us</h1>
                 <form>
-                    <input type="email" name="email" class="text-input contact-input" placeholder="Your email address...">
-                    <textarea rows="4" name="message" class="text-input contact-input" placeholder="Your message..."></textarea>
+                    <input type="email" name="email" class="text-input contact-input"
+                        placeholder="Your email address...">
+                    <textarea rows="4" name="message" class="text-input contact-input"
+                        placeholder="Your message..."></textarea>
                     <button type="submit" class="btn btn-big contact-btn">Send</button>
                 </form>
             </div>
         </div>
         <div class="footer-bottom">
-             Copyright  &copy; 2025 Watch Store
+            Copyright &copy; 2025 Watch Store
         </div>
     </footer>
     <script>
@@ -282,14 +300,14 @@
                 let cart = JSON.parse(localStorage.getItem('cart')) || [];
                 const cartContainer = document.querySelector('tbody');
                 cartContainer.innerHTML = '';
-    
+
                 if (cart.length === 0) {
                     document.querySelector('.cart-container').innerHTML = `
                         <p id="cart-empty">Your cart is empty.<br><br><a href="products.html">Continue Shopping</a></p>`;
                     document.getElementById('grand-total').textContent = 'NPR0.00';
                     return;
                 }
-    
+
                 cart.forEach((product, index) => {
                     const row = document.createElement('tr');
                     row.innerHTML = `
@@ -301,16 +319,16 @@
                     `;
                     cartContainer.appendChild(row);
                 });
-    
+
                 updateEventListeners();
                 updateGrandTotal();
             }
-    
+
             // Update Quantities and Remove Buttons
             function updateEventListeners() {
                 const quantities = document.querySelectorAll('.quantity');
                 const removeButtons = document.querySelectorAll('.remove-btn');
-    
+
                 quantities.forEach((input, index) => {
                     input.addEventListener('input', () => {
                         const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -320,7 +338,7 @@
                         loadCart();
                     });
                 });
-    
+
                 removeButtons.forEach((button) => {
                     button.addEventListener('click', () => {
                         const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -331,14 +349,14 @@
                     });
                 });
             }
-    
+
             // Update Grand Total
             function updateGrandTotal() {
                 const cart = JSON.parse(localStorage.getItem('cart')) || [];
                 const grandTotal = cart.reduce((total, item) => total + item.price * item.quantity, 0);
                 document.getElementById('grand-total').textContent = `NPR${grandTotal.toFixed(2)}`;
             }
-    
+
             loadCart();
         });
 
@@ -376,4 +394,5 @@
         }
     </script>
 </body>
+
 </html>

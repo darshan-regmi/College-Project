@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -72,7 +73,8 @@
             border-collapse: collapse;
         }
 
-        .order-summary th, .order-summary td {
+        .order-summary th,
+        .order-summary td {
             padding: 10px;
             text-align: left;
             border-bottom: 1px solid #ddd;
@@ -141,7 +143,7 @@
                 <h1>Thank You for Your Purchase!</h1>
             </div>
             <div class="thank-you">Your order has been successfully placed.</div>
-            <div class="order-details" id="purchase-details" >
+            <div class="order-details" id="purchase-details">
                 <!-- Purchase details will be dynamically inserted here -->
 
             </div>
@@ -170,29 +172,42 @@
         <div class="footer-content">
             <div class="footer-section about">
                 <h1>About Us</h1>
-                <p>At WatcHUB, we offer a curated selection of quality timepieces for every occasion. Our goal is to provide exceptional products and service, helping you find the perfect watch for your style.</p>
+                <p>At WatcHUB, we offer a curated selection of quality timepieces for every occasion. Our goal is to
+                    provide exceptional products and service, helping you find the perfect watch for your style.</p>
             </div>
             <div class="footer-section links">
                 <h1>Quick Links</h1>
                 <ul>
-                    <a href="../index.html"><li>Home</li></a>
-                    <a href="products.html"><li>Products</li></a>
-                    <a href="blog.html"><li>Blog</li></a>
-                    <a href="research.html"><li>Research</li></a>
-                    <a href="about.html"><li>About Us</li></a>
+                    <a href="../index.html">
+                        <li>Home</li>
+                    </a>
+                    <a href="products.html">
+                        <li>Products</li>
+                    </a>
+                    <a href="blog.html">
+                        <li>Blog</li>
+                    </a>
+                    <a href="research.html">
+                        <li>Research</li>
+                    </a>
+                    <a href="about.html">
+                        <li>About Us</li>
+                    </a>
                 </ul>
             </div>
             <div class="footer-section contact">
                 <h1>Contact Us</h1>
                 <form>
-                    <input type="email" name="email" class="text-input contact-input" placeholder="Your email address...">
-                    <textarea rows="4" name="message" class="text-input contact-input" placeholder="Your message..."></textarea>
+                    <input type="email" name="email" class="text-input contact-input"
+                        placeholder="Your email address...">
+                    <textarea rows="4" name="message" class="text-input contact-input"
+                        placeholder="Your message..."></textarea>
                     <button type="submit" class="btn btn-big contact-btn">Send</button>
                 </form>
             </div>
         </div>
         <div class="footer-bottom">
-             Copyright  &copy; 2025 Watch Store
+            Copyright &copy; 2025 Watch Store
         </div>
     </footer>
 
@@ -252,7 +267,7 @@
         // Populate order summary on page load
         window.onload = populateOrderSummary;
 
-         // Retrieve data from localStorage
+        // Retrieve data from localStorage
         const checkoutData = JSON.parse(localStorage.getItem("userData"));
 
         // Display data if available
@@ -301,4 +316,5 @@
         }
     </script>
 </body>
+
 </html>
