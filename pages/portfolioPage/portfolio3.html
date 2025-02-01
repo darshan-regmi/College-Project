@@ -296,6 +296,56 @@
                 height: 3rem;
             }
         }
+
+        .personal-info {
+            margin-top: 20px;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 8px;
+            border: 1px solid rgba(0, 173, 181, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .personal-info p {
+            margin: 10px 0;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .personal-info p:hover {
+            transform: translateX(5px);
+        }
+
+        .personal-info i {
+            color: var(--accent-color);
+            width: 20px;
+            font-size: 1.1rem;
+        }
+
+        .role {
+            color: var(--accent-color);
+            font-weight: 500;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .personal-info {
+                margin: 15px 0;
+            }
+            
+            .profile-section {
+                text-align: center;
+            }
+
+            .personal-info p {
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -308,8 +358,13 @@
             <img src="../../assets/img/team/minham.jpg" alt="Minham Singh Ale" class="profile-image">
             <div class="profile-info">
                 <h1>Minham Singh Ale</h1>
-                <p>Computer Science Student</p>
-                <p>Passionate about games,photography and artificial intelligence</p>
+                <p class="role">Blogger</p>
+                <p>Passionate about games, photography and artificial intelligence</p>
+                <div class="personal-info">
+                    <p><i class="fas fa-phone"></i> +977 9846123789</p>
+                    <p><i class="fas fa-calendar-alt"></i> DOB: 2004/09/25</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Pokhara-11, Kaski</p>
+                </div>
             </div>
         </section>
 

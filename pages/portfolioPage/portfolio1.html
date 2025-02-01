@@ -297,6 +297,56 @@
                 height: 3rem;
             }
         }
+
+        .personal-info {
+            margin-top: 20px;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 8px;
+            border: 1px solid rgba(0, 173, 181, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .personal-info p {
+            margin: 10px 0;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .personal-info p:hover {
+            transform: translateX(5px);
+        }
+
+        .personal-info i {
+            color: var(--accent-color);
+            width: 20px;
+            font-size: 1.1rem;
+        }
+
+        .role {
+            color: var(--accent-color);
+            font-weight: 500;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .personal-info {
+                margin: 15px 0;
+            }
+
+            .profile-section {
+                text-align: center;
+            }
+
+            .personal-info p {
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 
@@ -310,16 +360,34 @@
             <img src="../../assets/img/team/teamLeader.jpg" alt="Darshan Regmi" class="profile-image">
             <div class="profile-info">
                 <h1>Darshan Regmi</h1>
-                <p>Computer Science Student</p>
+                <p class="role">Team Leader</p>
                 <p>Passionate about web development and artificial intelligence and poetry</p>
+                <div class="personal-info">
+                    <p><i class="fas fa-phone"></i> +977 9748212381</p>
+                    <p><i class="fas fa-calendar-alt"></i> DOB: 2007/05/23</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Pokhara-11, Fullbari, Nepal</p>
+                </div>
             </div>
         </section>
 
         <section class="section">
             <h2><i class="fas fa-user"></i> About Me</h2>
-            <p>I am a first year Computer Science student with a keen interest in software development and
-                problem-solving. I enjoy creating elegant solutions to complex problems and am always eager to learn new
-                technologies and writing poems to reflect my moods and thoughts.</p>
+            <p>A fresher into the domain of Computer Science, fond of developing software, solving problems, and
+                expressing himself through code. Interesting thing that keeps me occupied with technology is to find new
+                languages, frameworks, and tools that help create solutions for the real world in the most efficient and
+                elegant manner. Be it web development, optimization of algorithms, or debugging through intricacies of
+                code, problem-solving at each step is something that really excites me.
+                <br><br>
+                Rather than anything to do with coding, I have a deep love for poetry. It helps me channel these
+                thoughts, emotions, and experiences onto paper. In my eyes, writing poetry isn't a hobby; it's one means
+                to express myself and process the world around me-a way to deepen communication with people.
+                <br><br>
+                Currently, I am working on the Poetica application-some sort of poetry-technology marriage that lets
+                writers create, share, and connect anew. The team is composed of people like me, which means it offers a
+                variety of challenges all the time; there is always something new to learn. Other than fulltime work, I
+                always have availability for freelance contracts, software development, and web applications, and also
+                keep looking out for cool projects to engage with.
+            </p>
         </section>
 
         <section class="section">
@@ -342,6 +410,8 @@
                 <div class="skill-item"><i class="fab fa-node"></i> Node.js</div>
                 <div class="skill-item"><i class="fab fa-git-alt"></i> Git</div>
                 <div class="skill-item"><i class="fas fa-database"></i> SQL</div>
+                <div class="skill-item"><i class="fab fa-flutter"></i> Flutter</div>
+                <div class="skill-item"><i class="fab fa-swift"></i> Swift</div>
             </div>
         </section>
 
